@@ -10,7 +10,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super});
+  MyApp({super.key});
   final AppRouter router = AppRouter();
   // This widget is the root of your application.
   @override
