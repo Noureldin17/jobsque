@@ -68,6 +68,8 @@ flutter:
     - assets/icons/TwitterLogo.svg
     - assets/icons/DiscordLogo.svg
     - assets/icons/arrow-left.svg
+    - assets/icons/arrow-down.svg
+    - assets/icons/setting-4.svg
     - assets/icons/search-normal.svg
     - assets/icons/profile.svg
     - assets/icons/clock.svg

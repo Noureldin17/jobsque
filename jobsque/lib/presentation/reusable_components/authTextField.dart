@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AuthTextField extends StatefulWidget {
   final String? hinttext;
   final String? prefixIcon;
+  final String? initValue;
   String? suffixIcon;
   bool? isHidden;
   final TextInputType? keyboardtype;
@@ -16,10 +17,11 @@ class AuthTextField extends StatefulWidget {
       this.hinttext,
       this.prefixIcon,
       this.suffixIcon,
-      this.isHidden,
+      required this.isHidden,
       this.keyboardtype,
-      this.controller,
-      this.suffixShowed});
+      required this.controller,
+      this.suffixShowed,
+      this.initValue});
 
   @override
   State<AuthTextField> createState() => _AuthTextFieldState();

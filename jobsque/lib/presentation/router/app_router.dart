@@ -20,7 +20,7 @@ class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = AppMainPage();
+    startscreen = LoginPageWidget();
 
     switch (settings.name) {
       case '/':
