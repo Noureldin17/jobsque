@@ -4,6 +4,12 @@ import 'package:sizer/sizer.dart';
 
 class JobInfoCard extends StatefulWidget {
   const JobInfoCard({super.key});
+
+  @override
+  State<JobInfoCard> createState() => _JobInfoCardState();
+}
+
+class _JobInfoCardState extends State<JobInfoCard> {
   double? Height(double h) {
     return ((h / 756) * 100).h;
   }
@@ -12,11 +18,6 @@ class JobInfoCard extends StatefulWidget {
     return ((w / 375) * 100).w;
   }
 
-  @override
-  State<JobInfoCard> createState() => _JobInfoCardState();
-}
-
-class _JobInfoCardState extends State<JobInfoCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,13 +30,13 @@ class _JobInfoCardState extends State<JobInfoCard> {
         children: [
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(
-                widget.Width(16)!, widget.Height(20)!, widget.Width(16)!, 0),
+                Width(16)!, Height(20)!, Width(16)!, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  height: widget.Height(40)!,
-                  width: widget.Width(40)!,
+                  height: Height(40)!,
+                  width: Width(40)!,
                   padding: EdgeInsets.all(5),
                   child: SvgPicture.asset('assets/icons/bezier.svg'),
                   decoration: BoxDecoration(
@@ -56,7 +57,7 @@ class _JobInfoCardState extends State<JobInfoCard> {
                     ),
                     Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            0, widget.Height(4)!, 0, 0)),
+                            0, Height(4)!, 0, 0)),
                     Text(
                       'Zoom • United States',
                       style: TextStyle(
@@ -74,7 +75,7 @@ class _JobInfoCardState extends State<JobInfoCard> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(
-                widget.Width(16)!, widget.Height(20)!, widget.Width(16)!, 0),
+                Width(16)!, Height(20)!, Width(16)!, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -90,8 +91,8 @@ class _JobInfoCardState extends State<JobInfoCard> {
                       ),
                     ),
                   ),
-                  width: widget.Width(87),
-                  height: widget.Height(30),
+                  width: Width(87),
+                  height: Height(30),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Color.fromARGB(36, 255, 255, 255)),
@@ -108,8 +109,8 @@ class _JobInfoCardState extends State<JobInfoCard> {
                       ),
                     ),
                   ),
-                  width: widget.Width(87),
-                  height: widget.Height(30),
+                  width: Width(87),
+                  height: Height(30),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Color.fromARGB(36, 255, 255, 255)),
@@ -126,8 +127,8 @@ class _JobInfoCardState extends State<JobInfoCard> {
                       ),
                     ),
                   ),
-                  width: widget.Width(87),
-                  height: widget.Height(30),
+                  width: Width(87),
+                  height: Height(30),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: Color.fromARGB(36, 255, 255, 255)),
@@ -137,7 +138,7 @@ class _JobInfoCardState extends State<JobInfoCard> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(
-                widget.Width(16)!, widget.Height(20)!, widget.Width(16)!, 0),
+                Width(16)!, Height(20)!, Width(16)!, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -168,7 +169,7 @@ class _JobInfoCardState extends State<JobInfoCard> {
                   },
                   child: Text('Apply now'),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(widget.Width(96)!, widget.Height(32)!),
+                    minimumSize: Size(Width(96)!, Height(32)!),
                     backgroundColor: Color(0xFF3366FF),
                     textStyle: TextStyle(
                       fontSize: 12,

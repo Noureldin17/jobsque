@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Sizer(
         builder: (context, orientation, deviceType) => Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: Colors.white,
             body: SafeArea(
                 child: SingleChildScrollView(
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                             widget.Height(28)!,
                             widget.Width(24)!,
                             0),
-                        child: AppSearchBar(),
+                        child: AppSearchBar(hasIcon: false),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:jobsque/presentation/reusable_components/interestsCard.dart';
+import 'package:jobsque/presentation/reusable_components/getting_started/interestsCard.dart';
 import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/interests_items.dart' as interestslist;

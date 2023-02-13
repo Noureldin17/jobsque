@@ -25,6 +25,7 @@ class _AppMainPageState extends State<AppMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
           enableFeedback: false,

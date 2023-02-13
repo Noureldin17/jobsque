@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:jobsque/presentation/reusable_components/platformAuthBtn.dart';
+import 'package:jobsque/presentation/reusable_components/authentication/platformAuthBtn.dart';
 import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../reusable_components/authTextField.dart';
+import '../../reusable_components/authentication/authTextField.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 class CreateAccountPage extends StatefulWidget {

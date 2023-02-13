@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-import 'appSearchBar.dart';
+import '../appSearchBar.dart';
 
 class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
   const SearchAppBar({super.key});
   double? Height(double h) {
-    return ((h / 756) * 100).h;
+    return ((h / 812) * 100).h;
   }
 
   double? Width(double w) {
@@ -38,7 +38,10 @@ class _SearchAppBarState extends State<SearchAppBar> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 0, widget.Width(15)!, 0),
           ),
-          Expanded(child: AppSearchBar())
+          Expanded(
+              child: AppSearchBar(
+            hasIcon: true,
+          ))
         ],
       ),
     );

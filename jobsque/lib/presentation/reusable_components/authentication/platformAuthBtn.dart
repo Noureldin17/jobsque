@@ -7,7 +7,7 @@ class platformButton extends StatelessWidget {
   final FaIcon? icon;
   final String? name;
 
-  platformButton({super.key, this.icon, this.name});
+  const platformButton({super.key, this.icon, this.name});
 
   @override
   Widget build(BuildContext context) {

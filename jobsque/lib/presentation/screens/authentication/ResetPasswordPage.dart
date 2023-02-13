@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
-import '../../reusable_components/authTextField.dart';
+import '../../reusable_components/authentication/authTextField.dart';
 import '../../reusable_components/primaryButton.dart';
 
 class ResetPassword extends StatefulWidget {

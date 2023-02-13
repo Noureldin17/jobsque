@@ -54,6 +54,12 @@ dev_dependencies:
 flutter:
   assets: 
     - assets/
+    - assets/icons/DimasProfile.svg
+    - assets/DimasProfile.png
+    - assets/job_app_steps/tick-circle.svg
+    - assets/job_app_steps/step2.svg
+    - assets/job_app_steps/step3.svg
+    - assets/job_app_steps/Line.svg
     - assets/icons/navbar_icons/home.svg
     - assets/icons/navbar_icons/message.svg
     - assets/icons/navbar_icons/archive-minus.svg
@@ -69,7 +75,11 @@ flutter:
     - assets/icons/DiscordLogo.svg
     - assets/icons/arrow-left.svg
     - assets/icons/arrow-down.svg
+    - assets/icons/search-illust.svg
     - assets/icons/setting-4.svg
+    - assets/icons/dollar-circle.svg
+    - assets/icons/location.svg
+    - assets/icons/briefcase-small.svg
     - assets/icons/search-normal.svg
     - assets/icons/profile.svg
     - assets/icons/clock.svg

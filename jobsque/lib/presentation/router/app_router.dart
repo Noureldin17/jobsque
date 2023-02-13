@@ -13,6 +13,8 @@ import 'package:jobsque/presentation/screens/authentication/PasswordChangedSucce
 import 'package:jobsque/presentation/screens/authentication/PreferedLocationsPage.dart';
 import 'package:jobsque/presentation/screens/authentication/ResetPasswordPage.dart';
 import 'package:jobsque/presentation/screens/SplashScreen.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/JobApplicationStepOne.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/JobDetailPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/JobSearchPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SearchResultsPage.dart';
 
@@ -20,7 +22,7 @@ class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = LoginPageWidget();
+    startscreen = JobApplicationStepOne();
 
     switch (settings.name) {
       case '/':
@@ -51,8 +53,12 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => AppMainPage());
       case pages.jobSearchPageScreen:
         return MaterialPageRoute(builder: (_) => JobSearchPage());
+      case pages.jobDetailPageScreen:
+        return MaterialPageRoute(builder: (_) => JobDetailPage());
       case pages.searchResultsPageScreen:
         return MaterialPageRoute(builder: (_) => SearchResultsPage());
+      case pages.jobApplicationStepOnePageScreen:
+        return MaterialPageRoute(builder: (_) => JobApplicationStepOne());
       default:
         return null;
     }

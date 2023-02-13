@@ -4,6 +4,12 @@ import 'package:sizer/sizer.dart';
 
 class PopularSearchItem extends StatefulWidget {
   const PopularSearchItem({super.key});
+
+  @override
+  State<PopularSearchItem> createState() => _PopularSearchItemState();
+}
+
+class _PopularSearchItemState extends State<PopularSearchItem> {
   double? Height(double h) {
     return ((h / 756) * 100).h;
   }
@@ -13,15 +19,10 @@ class PopularSearchItem extends StatefulWidget {
   }
 
   @override
-  State<PopularSearchItem> createState() => _PopularSearchItemState();
-}
-
-class _PopularSearchItemState extends State<PopularSearchItem> {
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(
-          widget.Width(24)!, widget.Height(21)!, widget.Width(25)!, 0),
+          Width(24)!, Height(21)!, Width(25)!, 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -29,8 +30,7 @@ class _PopularSearchItemState extends State<PopularSearchItem> {
             children: [
               SvgPicture.asset('assets/icons/clock.svg'),
               Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(
-                      widget.Width(8)!, 0, 0, 0)),
+                  padding: EdgeInsetsDirectional.fromSTEB(Width(8)!, 0, 0, 0)),
               Text(
                 'Junior UI Designer',
                 style: TextStyle(

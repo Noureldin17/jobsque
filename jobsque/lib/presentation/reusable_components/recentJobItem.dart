@@ -182,7 +182,7 @@ class _RecentJobItemState extends State<RecentJobItem> {
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(
-                widget.Width(24)!, widget.Height(16)!, widget.Width(24)!, 0),
+                widget.Width(0)!, widget.Height(16)!, widget.Width(0)!, 0),
             child: Divider(
               thickness: 1,
             ),

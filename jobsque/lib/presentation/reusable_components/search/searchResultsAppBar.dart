@@ -1,17 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:jobsque/presentation/reusable_components/customModalBottomSheet.dart';
-import 'package:jobsque/presentation/reusable_components/searchFilterItem.dart';
+import 'package:jobsque/presentation/reusable_components/search/customModalBottomSheet.dart';
+import 'package:jobsque/presentation/reusable_components/search/searchFilterItem.dart';
 import 'package:sizer/sizer.dart';
 
-import 'appSearchBar.dart';
+import '../appSearchBar.dart';
 
 class SearchResultsAppBar extends StatefulWidget
     implements PreferredSizeWidget {
   const SearchResultsAppBar({super.key});
   double? Height(double h) {
-    return ((h / 756) * 100).h;
+    return ((h / 812) * 100).h;
   }
 
   double? Width(double w) {
@@ -48,7 +47,10 @@ class _SearchResultsAppBarState extends State<SearchResultsAppBar> {
                   padding: EdgeInsetsDirectional.fromSTEB(
                       0, 0, widget.Width(15)!, 0),
                 ),
-                Expanded(child: AppSearchBar()),
+                Expanded(
+                    child: AppSearchBar(
+                  hasIcon: true,
+                )),
               ],
             ),
           ),
@@ -84,11 +86,14 @@ class _SearchResultsAppBarState extends State<SearchResultsAppBar> {
                             ))),
                     Row(
                       children: [
-                        SearchFilterItem(),
-                        SearchFilterItem(),
-                        SearchFilterItem(),
-                        SearchFilterItem(),
-                        SearchFilterItem(),
+                        SearchFilterItem(filterText: 'Onsite'),
+                        SearchFilterItem(filterText: 'Fulltime'),
+                        SearchFilterItem(
+                          filterText: 'Post Date',
+                        ),
+                        SearchFilterItem(
+                          filterText: 'Salary',
+                        ),
                       ],
                     ),
                   ],
