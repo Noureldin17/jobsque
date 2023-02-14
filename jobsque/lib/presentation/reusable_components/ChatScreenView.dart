@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobsque/presentation/reusable_components/chatReceivedBubble.dart';
-import 'package:jobsque/presentation/reusable_components/chatSentBubble.dart';
+import 'package:jobsque/presentation/reusable_components/ChatReceivedBubble.dart';
+import 'package:jobsque/presentation/reusable_components/ChatSentBubble.dart';
 import 'package:sizer/sizer.dart';
 
 class ChatViewScreen extends StatefulWidget {
@@ -31,10 +30,10 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                          top: widget.Height(24),
+                          top: widget.Height(20),
                           left: widget.Width(26),
                           right: widget.Width(26),
-                          bottom: widget.Height(15)),
+                          bottom: widget.Height(10)),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -46,17 +45,28 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
                               onPressed: () {},
                               icon: SvgPicture.asset(
                                   'assets/icons/arrow-left.svg')),
-                          Container(
-                              padding: EdgeInsets.only(
-                                  top: widget.Height(5),
-                                  left: widget.Width(22),
-                                  right: widget.Width(12)),
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(100),
-                                  child: SvgPicture.asset(
-                                    'assets/icons/TwitterLogo.svg',
-                                    fit: BoxFit.scaleDown,
-                                  ))),
+
+                          Padding(
+                            padding: EdgeInsets.only(
+                                left: widget.Width(22.5),
+                                right: widget.Width(12)),
+                            child: CircleAvatar(
+                              radius: 18,
+                              backgroundImage:
+                                  AssetImage('assets/twitter4.png'),
+                            ),
+                          ),
+                          // Container(
+                          //     padding: EdgeInsets.only(
+                          //         top: widget.Height(5),
+                          //         left: widget.Width(22),
+                          //         right: widget.Width(12)),
+                          //     child: ClipRRect(
+                          //         borderRadius: BorderRadius.circular(100),
+                          //         child: Image.asset(
+                          //           'assets/image31.png',
+                          //           fit: BoxFit.scaleDown,
+                          //         ))),
                           Text(
                             'Twitter',
                             style: TextStyle(
@@ -77,30 +87,8 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
                       ),
                     ),
                     Divider(
-                      thickness: 3,
+                      thickness: 1.4,
                     ),
-                    Row(children: <Widget>[
-                      Expanded(
-                          child: Padding(
-                        padding: const EdgeInsets.only(left: 24, right: 20),
-                        child: Divider(
-                          thickness: 1,
-                        ),
-                      )),
-                      Text("Today,  Nov 13",
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                              color: Color.fromARGB(255, 156, 163, 175))),
-                      Expanded(
-                          child: Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 24),
-                        child: Divider(
-                          thickness: 1,
-                        ),
-                      )),
-                    ]),
                     Padding(padding: EdgeInsets.only(top: 25)),
                     ChatReceivedBubble(
                         TextMessage: 'Hi Rafif!, I'

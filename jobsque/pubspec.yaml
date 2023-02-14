@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_country_code_picker: ^0.0.4
   dotted_border: ^2.0.0+3
+  sticky_headers: "^0.3.0"
+  badges: ^3.0.2
 
 dev_dependencies:
   flutter_test:
@@ -57,8 +59,16 @@ flutter:
   assets: 
     - assets/
     - assets/flag.svg
+    - assets/twitter.png
+    - assets/twitter4.png
+    - assets/image31.png
+    - assets/DanaLogo.png
+    - assets/DanaLogo.svg
+    - assets/Ellipse12.svg
     - assets/pdf.svg
     - assets/SavedIlustration.svg
+    - assets/DataIlustration.svg
+    - assets/NotificationIlustration.svg
     - assets/data-illust.svg
     - assets/edit-2.svg
     - assets/document-upload.svg

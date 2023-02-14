@@ -26,168 +26,171 @@ class RecentJobItem extends StatefulWidget {
 class _RecentJobItemState extends State<RecentJobItem> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsetsDirectional.fromSTEB(
-          widget.Width(24)!, widget.Height(22.5)!, widget.Width(24)!, 0),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              SvgPicture.asset(
-                'assets/icons/TwitterLogo.svg',
-                height: widget.Height(40),
-                width: widget.Width(40),
-              ),
-              Padding(
-                padding:
-                    EdgeInsetsDirectional.fromSTEB(0, 0, widget.Width(16)!, 0),
-              ),
-              Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                    Text(
-                      'Senior UI Designer',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Display',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
-                        color: Color.fromARGB(255, 17, 24, 39),
-                      ),
-                    ),
-                    Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0, widget.Height(4)!, 0, 0)),
-                    Text(
-                      'Twitter • Jakarta, Indonesia ',
-                      style: TextStyle(
-                        fontFamily: 'SF Pro Display',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,
-                        color: Color.fromARGB(255, 55, 65, 81),
-                      ),
-                    ),
-                  ])),
-              IconButton(
-                  onPressed: () {
-                    setState(() {
-                      widget.ItemSaved = !widget.ItemSaved;
-                    });
-                  },
-                  icon: SvgPicture.asset(
-                    widget.ItemSaved
-                        ? widget.activeSaveIconAsset!
-                        : widget.saveIconAsset!,
-                    height: widget.Height(40),
-                    width: widget.Width(40),
-                    fit: BoxFit.scaleDown,
-                    alignment: Alignment.centerRight,
-                  )),
-            ],
-          ),
-          Padding(
-            padding:
-                EdgeInsetsDirectional.fromSTEB(0, widget.Height(18.5)!, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        padding: EdgeInsetsDirectional.fromSTEB(
+            widget.Width(24)!, widget.Height(22.5)!, widget.Width(24)!, 0),
+        child: Column(
+          children: [
+            Row(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      child: Center(
-                        child: Text(
-                          'Fulltime',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: Color.fromARGB(255, 51, 102, 255),
-                          ),
-                        ),
-                      ),
-                      width: widget.Width(73),
-                      height: widget.Height(26),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Color.fromARGB(255, 214, 228, 255)),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          0, 0, widget.Width(8)!, 0),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Text(
-                          'Remote',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: Color.fromARGB(255, 51, 102, 255),
-                          ),
-                        ),
-                      ),
-                      width: widget.Width(73),
-                      height: widget.Height(26),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Color.fromARGB(255, 214, 228, 255)),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
-                          0, 0, widget.Width(8)!, 0),
-                    ),
-                    Container(
-                      child: Center(
-                        child: Text(
-                          'Senior',
-                          style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: Color.fromARGB(255, 51, 102, 255),
-                          ),
-                        ),
-                      ),
-                      width: widget.Width(73),
-                      height: widget.Height(26),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Color.fromARGB(255, 214, 228, 255)),
-                    ),
-                  ],
+                SvgPicture.asset(
+                  'assets/icons/TwitterLogo.svg',
+                  height: widget.Height(40),
+                  width: widget.Width(40),
                 ),
-                RichText(
-                    text: TextSpan(children: [
-                  TextSpan(
-                    text: '\$15K',
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 46, 142, 24),
-                        fontFamily: 'SF Pro Display',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16),
-                  ),
-                  TextSpan(
-                    text: '/Month',
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 107, 114, 128),
-                        fontFamily: 'SF Pro Display',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12),
-                  ),
-                ]))
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(
+                      0, 0, widget.Width(16)!, 0),
+                ),
+                Expanded(
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                      Text(
+                        'Senior UI Designer',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Display',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
+                          color: Color.fromARGB(255, 17, 24, 39),
+                        ),
+                      ),
+                      Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0, widget.Height(4)!, 0, 0)),
+                      Text(
+                        'Twitter • Jakarta, Indonesia ',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Display',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: Color.fromARGB(255, 55, 65, 81),
+                        ),
+                      ),
+                    ])),
+                IconButton(
+                    onPressed: () {
+                      setState(() {
+                        widget.ItemSaved = !widget.ItemSaved;
+                      });
+                    },
+                    icon: SvgPicture.asset(
+                      widget.ItemSaved
+                          ? widget.activeSaveIconAsset!
+                          : widget.saveIconAsset!,
+                      height: widget.Height(40),
+                      width: widget.Width(40),
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerRight,
+                    )),
               ],
             ),
-          ),
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(
-                widget.Width(0)!, widget.Height(16)!, widget.Width(0)!, 0),
-            child: Divider(
-              thickness: 1,
+            Padding(
+              padding:
+                  EdgeInsetsDirectional.fromSTEB(0, widget.Height(18.5)!, 0, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        child: Center(
+                          child: Text(
+                            'Fulltime',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: Color.fromARGB(255, 51, 102, 255),
+                            ),
+                          ),
+                        ),
+                        width: widget.Width(73),
+                        height: widget.Height(26),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Color.fromARGB(255, 214, 228, 255)),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0, 0, widget.Width(8)!, 0),
+                      ),
+                      Container(
+                        child: Center(
+                          child: Text(
+                            'Remote',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: Color.fromARGB(255, 51, 102, 255),
+                            ),
+                          ),
+                        ),
+                        width: widget.Width(73),
+                        height: widget.Height(26),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Color.fromARGB(255, 214, 228, 255)),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0, 0, widget.Width(8)!, 0),
+                      ),
+                      Container(
+                        child: Center(
+                          child: Text(
+                            'Senior',
+                            style: TextStyle(
+                              fontFamily: 'SF Pro Display',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                              color: Color.fromARGB(255, 51, 102, 255),
+                            ),
+                          ),
+                        ),
+                        width: widget.Width(73),
+                        height: widget.Height(26),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(100),
+                            color: Color.fromARGB(255, 214, 228, 255)),
+                      ),
+                    ],
+                  ),
+                  RichText(
+                      text: TextSpan(children: [
+                    TextSpan(
+                      text: '\$15K',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 46, 142, 24),
+                          fontFamily: 'SF Pro Display',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16),
+                    ),
+                    TextSpan(
+                      text: '/Month',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 107, 114, 128),
+                          fontFamily: 'SF Pro Display',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12),
+                    ),
+                  ]))
+                ],
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(
+                  widget.Width(0)!, widget.Height(16)!, widget.Width(0)!, 0),
+              child: Divider(
+                thickness: 1,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

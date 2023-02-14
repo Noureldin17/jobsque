@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
-import 'package:jobsque/presentation/reusable_components/tabsWidget.dart';
+import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
+import 'package:jobsque/presentation/reusable_components/TabsWidget.dart';
 import 'package:jobsque/presentation/views/JobCompanyView.dart';
 import 'package:jobsque/presentation/views/JobDescriptionView.dart';
 import 'package:jobsque/presentation/views/JobPeopleView.dart';

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:jobsque/presentation/reusable_components/getting_started/countrySelection.dart';
+import 'package:jobsque/presentation/reusable_components/getting_started/CountrySelection.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/countries.dart' as countries;
-import '../../reusable_components/primaryButton.dart';
+import '../../reusable_components/PrimaryButton.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 
-import '../../reusable_components/tabsWidget.dart';
+import '../../reusable_components/TabsWidget.dart';
 
 // ignore: must_be_immutable
 class PreferedLocations extends StatefulWidget {

@@ -8,51 +8,45 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class ChatSentBubble extends StatelessWidget {
   const ChatSentBubble({super.key, required this.TextMessage});
-  final String? TextMessage;
+  final String TextMessage;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 24),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 26),
       child: Align(
         alignment: Alignment.centerRight,
         child: Container(
-          constraints: BoxConstraints(maxWidth: 272),
+          padding: EdgeInsets.all(9),
           decoration: BoxDecoration(
               color: Color.fromARGB(255, 51, 102, 255),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(8),
                   bottomLeft: Radius.circular(8),
                   bottomRight: Radius.circular(8))),
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Flexible(
-                child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    TextMessage!,
-                    style: TextStyle(
-                        height: 1.2,
-                        fontFamily: 'SF Pro Display',
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400),
-                  ),
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                constraints: BoxConstraints(maxWidth: 270),
+                child: Text(
+                  TextMessage,
+                  style: TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      color: Color.fromARGB(255, 244, 244, 245),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14),
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    '10.18',
-                    style: TextStyle(
-                        fontFamily: 'SF Pro Display',
-                        color: Color.fromARGB(255, 229, 231, 235),
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400),
-                  ),
-                ),
-              ],
-            )),
+              ),
+              Text(
+                '10.18',
+                textAlign: TextAlign.end,
+                style: TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    color: Color.fromARGB(255, 229, 231, 235),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14),
+              ),
+            ],
           ),
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/NotificationsPage.dart';
 import 'package:jobsque/presentation/screens/app_main_page.dart';
 import 'package:jobsque/presentation/screens/authentication/AccountSuccessPage.dart';
 // import 'package:jobsque/presentation/reusable_components/countrySelection.dart';
@@ -19,14 +20,14 @@ import 'package:jobsque/presentation/screens/home_screen_routes/JobApplicationSt
 import 'package:jobsque/presentation/screens/home_screen_routes/JobDetailPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/JobSearchPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SearchResultsPage.dart';
-import 'package:jobsque/presentation/screens/home_screen_routes/submittedApplicationPage.dart';
-import 'package:jobsque/presentation/views/ChatScreenView.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/SubmittedApplicationPage.dart';
+import 'package:jobsque/presentation/reusable_components/ChatScreenView.dart';
 
 class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = AppMainPage();
+    startscreen = ChatViewScreen();
 
     switch (settings.name) {
       case '/':
@@ -71,6 +72,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ApplicationSubmittedPage());
       case pages.Chat_View_Screen:
         return MaterialPageRoute(builder: (_) => ChatViewScreen());
+      case pages.Notifications_Page:
+        return MaterialPageRoute(builder: (_) => NotificationsPage());
       default:
         return null;
     }

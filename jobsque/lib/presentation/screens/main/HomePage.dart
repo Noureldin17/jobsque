@@ -5,7 +5,7 @@ import 'package:jobsque/presentation/reusable_components/jobCard.dart';
 import 'package:jobsque/presentation/reusable_components/recentJobItem.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../reusable_components/appSearchBar.dart';
+import '../../reusable_components/search/AppSearchBar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});

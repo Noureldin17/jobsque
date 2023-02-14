@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
-import 'package:jobsque/presentation/reusable_components/job_application/fileUploadForm.dart';
-import 'package:jobsque/presentation/reusable_components/job_application/fileUploadItem.dart';
+import 'package:jobsque/presentation/reusable_components/job_application/FileUploadForm.dart';
+import 'package:jobsque/presentation/reusable_components/job_application/FileUploadItem.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 
 import '../../reusable_components/job_application/JobApplicationSteps.dart';
-import '../../reusable_components/primaryButton.dart';
+import '../../reusable_components/PrimaryButton.dart';
 
 // ignore: must_be_immutable
 class JobApplicationStepThree extends StatefulWidget {
@@ -54,7 +54,7 @@ class _JobApplicationStepThreeState extends State<JobApplicationStepThree> {
                           padding: EdgeInsets.all(0),
                           splashRadius: 20,
                           constraints:
-                              BoxConstraints(maxHeight: 20, maxWidth: 20),
+                              BoxConstraints(maxHeight: 40, maxWidth: 40),
                           onPressed: () {},
                           icon:
                               SvgPicture.asset('assets/icons/arrow-left.svg')),

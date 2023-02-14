@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 
 import 'package:jobsque/presentation/reusable_components/job_application/JobApplicationSteps.dart';
-import 'package:jobsque/presentation/reusable_components/authentication/authTextField.dart';
-import 'package:jobsque/presentation/reusable_components/job_application/countryPickerFormField.dart';
-import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
+import 'package:jobsque/presentation/reusable_components/authentication/AuthTextField.dart';
+import 'package:jobsque/presentation/reusable_components/job_application/CountryPickerFormField.dart';
+import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
@@ -48,7 +48,7 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                           padding: EdgeInsets.all(0),
                           splashRadius: 20,
                           constraints:
-                              BoxConstraints(maxHeight: 20, maxWidth: 20),
+                              BoxConstraints(maxHeight: 40, maxWidth: 40),
                           onPressed: () {},
                           icon:
                               SvgPicture.asset('assets/icons/arrow-left.svg')),

@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-import '../appSearchBar.dart';
+import './AppSearchBar.dart';
 
 class SearchAppBar extends StatefulWidget implements PreferredSizeWidget {
   const SearchAppBar({super.key});

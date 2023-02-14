@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jobsque/presentation/reusable_components/ListDivider.dart';
 
-import 'package:jobsque/presentation/reusable_components/search/popularSearchItem.dart';
-import 'package:jobsque/presentation/reusable_components/search/recentSearchItem.dart';
-import 'package:jobsque/presentation/reusable_components/search/searchAppBar.dart';
+import 'package:jobsque/presentation/reusable_components/search/PopularSearchItem.dart';
+import 'package:jobsque/presentation/reusable_components/search/RecentSearchItem.dart';
+import 'package:jobsque/presentation/reusable_components/search/SearchAppBar.dart';
 import 'package:sizer/sizer.dart';
 
 class JobSearchPage extends StatefulWidget {
@@ -31,58 +32,7 @@ class _JobSearchPageState extends State<JobSearchPage> {
                   child: SingleChildScrollView(
                       child: Column(
                     children: [
-                      // Padding(
-                      //   padding: EdgeInsetsDirectional.fromSTEB(
-                      //       widget.Width(26)!,
-                      //       widget.Height(24)!,
-                      //       widget.Width(24)!,
-                      //       widget.Height(22)!),
-                      //   child: Row(
-                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //     children: [
-                      //       SvgPicture.asset(
-                      //         'assets/icons/arrow-left.svg',
-                      //         fit: BoxFit.scaleDown,
-                      //         color: Color.fromARGB(255, 41, 45, 50),
-                      //       ),
-                      //       Padding(
-                      //         padding: EdgeInsetsDirectional.fromSTEB(
-                      //             0, 0, widget.Width(15)!, 0),
-                      //       ),
-                      //       Expanded(child: AppSearchBar())
-                      //     ],
-                      //   ),
-                      // ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 244, 244, 245),
-                                  border: Border.all(
-                                      color: Color.fromARGB(255, 229, 231, 235),
-                                      width: 1)),
-                              height: widget.Height(36),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    widget.Width(24)!,
-                                    widget.Height(8)!,
-                                    widget.Width(0)!,
-                                    widget.Height(8)!),
-                                child: Text(
-                                  'Recent searches',
-                                  style: TextStyle(
-                                      fontFamily: "SF Pro Display",
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color:
-                                          Color.fromARGB(255, 107, 114, 128)),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                      ListDivider.left(divText: 'Recent Searches'),
                       RecentSearchItem(),
                       RecentSearchItem(),
                       RecentSearchItem(),
@@ -95,37 +45,7 @@ class _JobSearchPageState extends State<JobSearchPage> {
                             widget.Height(33)!,
                             widget.Width(0)!,
                             widget.Height(0)!),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 244, 244, 245),
-                                    border: Border.all(
-                                        color:
-                                            Color.fromARGB(255, 229, 231, 235),
-                                        width: 1)),
-                                height: widget.Height(36),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      widget.Width(24)!,
-                                      widget.Height(8)!,
-                                      widget.Width(0)!,
-                                      widget.Height(8)!),
-                                  child: Text(
-                                    'Popular searches',
-                                    style: TextStyle(
-                                        fontFamily: "SF Pro Display",
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w500,
-                                        color:
-                                            Color.fromARGB(255, 107, 114, 128)),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
+                        child: ListDivider.left(divText: 'Popular Searches'),
                       ),
                       PopularSearchItem(),
                       PopularSearchItem(),

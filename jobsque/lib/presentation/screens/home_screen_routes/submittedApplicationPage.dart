@@ -39,7 +39,7 @@ class _ApplicationSubmittedPageState extends State<ApplicationSubmittedPage> {
                         padding: EdgeInsets.all(0),
                         splashRadius: 20,
                         constraints:
-                            BoxConstraints(maxHeight: 20, maxWidth: 20),
+                            BoxConstraints(maxHeight: 40, maxWidth: 40),
                         onPressed: () {},
                         icon: SvgPicture.asset('assets/icons/arrow-left.svg')),
                     Padding(

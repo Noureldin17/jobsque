@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 class HomePageBanner extends StatelessWidget {
   const HomePageBanner({super.key});
@@ -49,7 +50,9 @@ class HomePageBanner extends StatelessWidget {
               border: Border.all(color: Color.fromARGB(255, 209, 213, 219)),
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, pages.Notifications_Page);
+              },
               icon: SvgPicture.asset(
                 'assets/icons/notification.svg',
                 fit: BoxFit.scaleDown,

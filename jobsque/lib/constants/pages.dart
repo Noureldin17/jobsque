@@ -18,3 +18,4 @@ const Job_Application_Step_Two = 'Job_Application_Step_Two';
 const Job_Application_Step_Three = 'Job_Application_Step_Three';
 const Job_Application_Submitted = 'Job_Application_Submitted';
 const Chat_View_Screen = 'Chat_View_Screen';
+const Notifications_Page = 'Notifications_Page';
