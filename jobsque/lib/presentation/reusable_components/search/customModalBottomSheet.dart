@@ -48,7 +48,14 @@ class _CustomModalSheetState extends State<CustomModalSheet> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SvgPicture.asset('assets/icons/arrow-left.svg'),
+                      IconButton(
+                          padding: EdgeInsets.all(0),
+                          splashRadius: 20,
+                          constraints:
+                              BoxConstraints(maxHeight: 20, maxWidth: 20),
+                          onPressed: () {},
+                          icon:
+                              SvgPicture.asset('assets/icons/arrow-left.svg')),
                       Text(
                         "Set Filter",
                         style: TextStyle(

@@ -48,9 +48,12 @@ class HomePageBanner extends StatelessWidget {
               shape: BoxShape.circle,
               border: Border.all(color: Color.fromARGB(255, 209, 213, 219)),
             ),
-            child: SvgPicture.asset(
-              'assets/icons/notification.svg',
-              fit: BoxFit.scaleDown,
+            child: IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                'assets/icons/notification.svg',
+                fit: BoxFit.scaleDown,
+              ),
             ),
           ),
         ),

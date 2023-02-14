@@ -33,8 +33,10 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_bloc: ^8.1.2
   flutter_staggered_grid_view: ^0.6.2
-
+  country_picker: ^2.0.19
   cupertino_icons: ^1.0.2
+  fl_country_code_picker: ^0.0.4
+  dotted_border: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +56,13 @@ dev_dependencies:
 flutter:
   assets: 
     - assets/
+    - assets/flag.svg
+    - assets/pdf.svg
+    - assets/SavedIlustration.svg
+    - assets/data-illust.svg
+    - assets/edit-2.svg
+    - assets/document-upload.svg
+    - assets/export.svg
     - assets/icons/DimasProfile.svg
     - assets/DimasProfile.png
     - assets/job_app_steps/tick-circle.svg
@@ -71,11 +80,17 @@ flutter:
     - assets/icons/navbar_icons/briefcaseactive.svg
     - assets/icons/navbar_icons/profileactive.svg
     - assets/icons/bezier.svg
+    - assets/icons/microphone-2.svg
+    - assets/icons/paperclip-2.svg
+    - assets/icons/more.svg
     - assets/icons/TwitterLogo.svg
     - assets/icons/DiscordLogo.svg
     - assets/icons/arrow-left.svg
+    - assets/icons/directbox-notif.svg
     - assets/icons/arrow-down.svg
+    - assets/icons/arrow-right_button.svg
     - assets/icons/search-illust.svg
+    - assets/icons/search-status.svg
     - assets/icons/setting-4.svg
     - assets/icons/dollar-circle.svg
     - assets/icons/location.svg
@@ -83,6 +98,7 @@ flutter:
     - assets/icons/search-normal.svg
     - assets/icons/profile.svg
     - assets/icons/clock.svg
+    - assets/icons/green-clock.svg
     - assets/icons/arrow-right.svg
     - assets/icons/close-circle.svg
     - assets/icons/sms.svg

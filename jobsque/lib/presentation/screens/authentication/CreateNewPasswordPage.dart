@@ -149,7 +149,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                         buttonText: "Reset Password",
                         OnPrimaryButtonPressed: () {
                           Navigator.pushNamed(
-                              context, pages.passwordChangedSuccessScreen);
+                              context, pages.Password_Changed_Success);
                         }),
                   ),
                 ],

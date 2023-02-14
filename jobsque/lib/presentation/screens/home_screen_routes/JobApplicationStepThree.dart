@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:flutter_svg/svg.dart';
+import 'package:jobsque/presentation/reusable_components/job_application/fileUploadForm.dart';
+import 'package:jobsque/presentation/reusable_components/job_application/fileUploadItem.dart';
+import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 
-import 'package:jobsque/presentation/reusable_components/job_application/JobApplicationSteps.dart';
-import 'package:jobsque/presentation/reusable_components/authentication/authTextField.dart';
-import 'package:jobsque/presentation/reusable_components/job_application/countryPickerFormField.dart';
-import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
-import 'package:sizer/sizer.dart';
+import '../../reusable_components/job_application/JobApplicationSteps.dart';
+import '../../reusable_components/primaryButton.dart';
 
 // ignore: must_be_immutable
-class JobApplicationStepOne extends StatefulWidget {
-  JobApplicationStepOne({super.key});
+class JobApplicationStepThree extends StatefulWidget {
+  JobApplicationStepThree({super.key});
+  double Height(double h) {
+    return ((h / 812) * 100).h;
+  }
+
+  double Width(double w) {
+    return ((w / 375) * 100).w;
+  }
 
   bool WorkTypeActive = false;
-  bool UploadActive = false;
+  bool UploadActive = true;
 
-  bool WorkTypeHighlited = false;
+  bool WorkTypeHighlited = true;
   bool UploadHighlited = false;
-
-  TextEditingController UsernameController = TextEditingController();
-  TextEditingController EmailController = TextEditingController();
-  TextEditingController PickerController = TextEditingController();
   @override
-  State<JobApplicationStepOne> createState() => _JobApplicationStepOneState();
+  State<JobApplicationStepThree> createState() =>
+      _JobApplicationStepThreeState();
 }
 
-class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
+class _JobApplicationStepThreeState extends State<JobApplicationStepThree> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -43,6 +48,7 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                 Padding(
                   padding: EdgeInsets.only(left: 0, top: 31, right: 0),
                   child: Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
                       IconButton(
                           padding: EdgeInsets.all(0),
@@ -60,7 +66,7 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
                               fontFamily: 'SF Pro Display',
-                              color: Color.fromARGB(255, 17, 24, 39)))
+                              color: Color.fromARGB(255, 17, 24, 39))),
                     ],
                   ),
                 ),
@@ -75,12 +81,13 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                 ),
                 Padding(padding: EdgeInsets.only(top: 32)),
                 Row(
+                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Biodata',
+                          'Upload portfolio',
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w500,
@@ -104,7 +111,7 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Full Name*',
+                    'Upload CV*',
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -112,21 +119,13 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                         color: Color.fromARGB(255, 17, 24, 39)),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8)),
-                Container(
-                  child: AuthTextField(
-                    isHidden: false,
-                    controller: widget.UsernameController,
-                    prefixIcon: 'assets/icons/profile.svg',
-                    hinttext: 'Username ',
-                    keyboardtype: TextInputType.text,
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 20)),
+                Padding(padding: EdgeInsets.only(top: 12)),
+                FileUploadItem(),
+                Padding(padding: EdgeInsets.only(top: 18)),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Email*',
+                    'Other File',
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -134,43 +133,17 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                         color: Color.fromARGB(255, 17, 24, 39)),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8)),
-                Container(
-                  child: AuthTextField(
-                    isHidden: false,
-                    controller: widget.EmailController,
-                    prefixIcon: 'assets/icons/sms.svg',
-                    hinttext: 'Email ',
-                    keyboardtype: TextInputType.emailAddress,
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 20)),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'No.Handphone*',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'SF Pro Display',
-                        color: Color.fromARGB(255, 17, 24, 39)),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 8)),
-                Container(
-                  child: CountryPickerField(
-                    controller: widget.PickerController,
-                    // hinttext: 'wvwe ',
-                  ),
-                ),
+                Padding(padding: EdgeInsets.only(top: widget.Height(12))),
+                FileUploadForm(),
                 Spacer(),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(
+                      bottom: widget.Height(20), top: widget.Height(0)),
                   child: PrimaryButton(
-                      buttonText: 'Next',
+                      buttonText: 'Submit',
                       OnPrimaryButtonPressed: () {
                         Navigator.pushNamed(
-                            context, pages.Job_Application_Step_Two);
+                            context, pages.Job_Application_Submitted);
                       }),
                 ),
               ],

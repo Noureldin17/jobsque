@@ -125,7 +125,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     child: PrimaryButton(
                         buttonText: "Request Password Reset",
                         OnPrimaryButtonPressed: () {
-                          Navigator.pushNamed(context, pages.emailCheckScreen);
+                          Navigator.pushNamed(context, pages.Email_Check);
                         }),
                   ),
                   // Padding(

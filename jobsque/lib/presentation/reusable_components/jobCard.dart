@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class JobInfoCard extends StatefulWidget {
-  const JobInfoCard({super.key});
+  JobInfoCard({super.key});
+  bool isSaved = false;
 
   @override
   State<JobInfoCard> createState() => _JobInfoCardState();
@@ -20,6 +22,10 @@ class _JobInfoCardState extends State<JobInfoCard> {
 
   @override
   Widget build(BuildContext context) {
+    final String SaveIconAsset = 'assets/icons/navbar_icons/archive-minus.svg';
+    final String ActiveSaveIconAsset =
+        'assets/icons/navbar_icons/archive-minusactive.svg';
+
     return Container(
       height: ((183 / 756)) * MediaQuery.of(context).size.height,
       width: ((300 / 375)) * MediaQuery.of(context).size.width,
@@ -69,7 +75,18 @@ class _JobInfoCardState extends State<JobInfoCard> {
                     ),
                   ],
                 ),
-                SvgPicture.asset('assets/icons/navbar_icons/archive-minus.svg')
+                GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        widget.isSaved = !widget.isSaved;
+                      });
+                    },
+                    child: widget.isSaved == true
+                        ? SvgPicture.asset(
+                            ActiveSaveIconAsset,
+                            color: Colors.white,
+                          )
+                        : SvgPicture.asset(SaveIconAsset))
               ],
             ),
           ),

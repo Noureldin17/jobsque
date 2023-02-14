@@ -110,7 +110,7 @@ class _PreferedLocationsState extends State<PreferedLocations>
                     child: PrimaryButton(
                         buttonText: "Next",
                         OnPrimaryButtonPressed: () {
-                          Navigator.pushNamed(context, pages.accSuccessScreen);
+                          Navigator.pushNamed(context, pages.Account_Success);
                         }),
                   ),
                 ],

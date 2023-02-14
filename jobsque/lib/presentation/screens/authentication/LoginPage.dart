@@ -231,7 +231,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               child: GestureDetector(
                                   onTap: () {
                                     Navigator.pushNamed(
-                                        context, pages.createAccPage);
+                                        context, pages.Create_Account);
                                   },
                                   child: Text(
                                     'Register',

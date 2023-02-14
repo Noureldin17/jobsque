@@ -78,7 +78,7 @@ class _InterestsPageState extends State<InterestsPage> {
                     child: PrimaryButton(
                         buttonText: "Next",
                         OnPrimaryButtonPressed: () {
-                          Navigator.pushNamed(context, pages.locationsScreen);
+                          Navigator.pushNamed(context, pages.Locations_Select);
                         }),
                   ),
                   Padding(

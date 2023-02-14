@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jobsque/presentation/reusable_components/homeNotificationBanner.dart';
 import 'package:jobsque/presentation/reusable_components/homePageNameBanner.dart';
 import 'package:jobsque/presentation/reusable_components/jobCard.dart';
 import 'package:jobsque/presentation/reusable_components/recentJobItem.dart';
@@ -8,11 +9,11 @@ import '../../reusable_components/appSearchBar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
-  double? Height(double h) {
+  double Height(double h) {
     return ((h / 756) * 100).h;
   }
 
-  double? Width(double w) {
+  double Width(double w) {
     return ((w / 375) * 100).w;
   }
 
@@ -36,17 +37,21 @@ class _HomePageState extends State<HomePage> {
                       HomePageBanner(),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            widget.Width(24)!,
-                            widget.Height(28)!,
-                            widget.Width(24)!,
+                            widget.Width(24),
+                            widget.Height(28),
+                            widget.Width(24),
                             0),
                         child: AppSearchBar(hasIcon: false),
                       ),
+                      NotificationBanner(
+                        accepted: true,
+                        submitted: false,
+                      ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            widget.Width(24)!,
-                            widget.Height(20)!,
-                            widget.Width(24)!,
+                            widget.Width(24),
+                            widget.Height(20),
+                            widget.Width(24),
                             0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,17 +79,17 @@ class _HomePageState extends State<HomePage> {
                         scrollDirection: Axis.horizontal,
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              widget.Width(24)!,
-                              widget.Height(20)!,
-                              widget.Width(24)!,
+                              widget.Width(24),
+                              widget.Height(20),
+                              widget.Width(24),
                               0),
                           child: Row(
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    widget.Width(0)!,
-                                    widget.Height(0)!,
-                                    widget.Width(16)!,
+                                    widget.Width(0),
+                                    widget.Height(0),
+                                    widget.Width(16),
                                     0),
                                 child: JobInfoCard(),
                               ),
@@ -95,9 +100,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            widget.Width(24)!,
-                            widget.Height(20)!,
-                            widget.Width(24)!,
+                            widget.Width(24),
+                            widget.Height(20),
+                            widget.Width(24),
                             0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

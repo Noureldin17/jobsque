@@ -68,13 +68,13 @@ class _RecentJobItemState extends State<RecentJobItem> {
                       ),
                     ),
                   ])),
-              GestureDetector(
-                  onTap: () {
+              IconButton(
+                  onPressed: () {
                     setState(() {
                       widget.ItemSaved = !widget.ItemSaved;
                     });
                   },
-                  child: SvgPicture.asset(
+                  icon: SvgPicture.asset(
                     widget.ItemSaved
                         ? widget.activeSaveIconAsset!
                         : widget.saveIconAsset!,

@@ -14,51 +14,63 @@ import 'package:jobsque/presentation/screens/authentication/PreferedLocationsPag
 import 'package:jobsque/presentation/screens/authentication/ResetPasswordPage.dart';
 import 'package:jobsque/presentation/screens/SplashScreen.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/JobApplicationStepOne.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/JobApplicationStepThree.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/JobApplicationStepTwo.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/JobDetailPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/JobSearchPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SearchResultsPage.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/submittedApplicationPage.dart';
+import 'package:jobsque/presentation/views/ChatScreenView.dart';
 
 class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = JobApplicationStepOne();
+    startscreen = AppMainPage();
 
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => startscreen);
-      case pages.loginPage:
+      case pages.Login_Page:
         return MaterialPageRoute(builder: (_) => LoginPageWidget());
-      case pages.createAccPage:
+      case pages.Create_Account:
         return MaterialPageRoute(builder: (_) => CreateAccountPage());
-      case pages.onBoardingPage:
+      case pages.On_Boarding:
         return MaterialPageRoute(builder: (_) => OnBoardingPage());
-      case pages.splashScreen:
+      case pages.Splash_Screen:
         return MaterialPageRoute(builder: (_) => SplashScreen());
-      case pages.interestsScreen:
+      case pages.Interests_Select:
         return MaterialPageRoute(builder: (_) => InterestsPage());
-      case pages.locationsScreen:
+      case pages.Locations_Select:
         return MaterialPageRoute(builder: (_) => PreferedLocations());
-      case pages.accSuccessScreen:
+      case pages.Account_Success:
         return MaterialPageRoute(builder: (_) => AccountSuccess());
-      case pages.resetPasswordScreen:
+      case pages.Reset_Password:
         return MaterialPageRoute(builder: (_) => ResetPassword());
-      case pages.emailCheckScreen:
+      case pages.Email_Check:
         return MaterialPageRoute(builder: (_) => EmailCheckPage());
-      case pages.createNewPasswordScreen:
+      case pages.Create_New_Password:
         return MaterialPageRoute(builder: (_) => CreateNewPassword());
-      case pages.passwordChangedSuccessScreen:
+      case pages.Password_Changed_Success:
         return MaterialPageRoute(builder: (_) => PasswordChangeSuccess());
-      case pages.appMainPageScreen:
+      case pages.App_Main_Page:
         return MaterialPageRoute(builder: (_) => AppMainPage());
-      case pages.jobSearchPageScreen:
+      case pages.Job_Search_Page:
         return MaterialPageRoute(builder: (_) => JobSearchPage());
-      case pages.jobDetailPageScreen:
+      case pages.Job_Details_Page:
         return MaterialPageRoute(builder: (_) => JobDetailPage());
-      case pages.searchResultsPageScreen:
+      case pages.Search_Results_Page:
         return MaterialPageRoute(builder: (_) => SearchResultsPage());
-      case pages.jobApplicationStepOnePageScreen:
+      case pages.Job_Application_Step_One:
         return MaterialPageRoute(builder: (_) => JobApplicationStepOne());
+      case pages.Job_Application_Step_Two:
+        return MaterialPageRoute(builder: (_) => JobApplicationStepTwo());
+      case pages.Job_Application_Step_Three:
+        return MaterialPageRoute(builder: (_) => JobApplicationStepThree());
+      case pages.Job_Application_Submitted:
+        return MaterialPageRoute(builder: (_) => ApplicationSubmittedPage());
+      case pages.Chat_View_Screen:
+        return MaterialPageRoute(builder: (_) => ChatViewScreen());
       default:
         return null;
     }

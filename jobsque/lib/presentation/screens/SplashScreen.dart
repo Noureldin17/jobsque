@@ -18,7 +18,7 @@ class _SplashSccreenState extends State<SplashScreen> {
     Timer(Duration(milliseconds: 3000), () {
       // Navigator.pushReplacementNamed(context, pages.onBoardingPage);
       Navigator.pushNamedAndRemoveUntil(
-          context, pages.onBoardingPage, (route) => false);
+          context, pages.On_Boarding, (route) => false);
     });
     super.initState();
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 class JobApplicationSteps extends StatelessWidget {
@@ -42,7 +41,7 @@ class JobApplicationSteps extends StatelessWidget {
           padding: EdgeInsets.only(left: 20, right: 20),
           child: SvgPicture.asset(
             'assets/job_app_steps/Line.svg',
-            color: WorkTypeActive
+            color: WorkTypeActive || WorkTypeHighlited
                 ? Color.fromARGB(255, 51, 102, 255)
                 : Color.fromARGB(255, 209, 213, 219),
           ),

@@ -38,11 +38,12 @@ class _SearchResultsAppBarState extends State<SearchResultsAppBar> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SvgPicture.asset(
-                  'assets/icons/arrow-left.svg',
-                  fit: BoxFit.scaleDown,
-                  color: Color.fromARGB(255, 41, 45, 50),
-                ),
+                IconButton(
+                    padding: EdgeInsets.all(0),
+                    splashRadius: 20,
+                    constraints: BoxConstraints(maxHeight: 20, maxWidth: 20),
+                    onPressed: () {},
+                    icon: SvgPicture.asset('assets/icons/arrow-left.svg')),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(
                       0, 0, widget.Width(15)!, 0),
@@ -67,8 +68,12 @@ class _SearchResultsAppBarState extends State<SearchResultsAppBar> {
                             widget.Height(8)!,
                             widget.Width(18)!,
                             widget.Height(8)!),
-                        child: GestureDetector(
-                            onTap: (() {
+                        child: IconButton(
+                            padding: EdgeInsets.all(0),
+                            splashRadius: 20,
+                            constraints:
+                                BoxConstraints(maxHeight: 20, maxWidth: 20),
+                            onPressed: () {
                               showModalBottomSheet(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.only(
@@ -78,8 +83,8 @@ class _SearchResultsAppBarState extends State<SearchResultsAppBar> {
                                   enableDrag: true,
                                   context: context,
                                   builder: (context) => CustomModalSheet());
-                            }),
-                            child: SvgPicture.asset(
+                            },
+                            icon: SvgPicture.asset(
                               'assets/icons/setting-4.svg',
                               width: widget.Width(24),
                               height: widget.Height(24),

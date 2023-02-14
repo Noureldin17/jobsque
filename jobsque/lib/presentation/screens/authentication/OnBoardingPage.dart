@@ -103,7 +103,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               child: GestureDetector(
                                   onTap: () {
                                     Navigator.pushReplacementNamed(
-                                        context, pages.loginPage);
+                                        context, pages.Login_Page);
                                   },
                                   child: Text('Skip',
                                       textAlign: TextAlign.center,
@@ -124,7 +124,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       OnPrimaryButtonPressed: () {
                         if (widget.LastPage == true) {
                           Navigator.pushReplacementNamed(
-                              context, pages.loginPage);
+                              context, pages.Login_Page);
                         } else {
                           onBoardingPageController.nextPage(
                               duration: Duration(milliseconds: 600),

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
-import 'package:jobsque/presentation/reusable_components/JobPeopleListItem.dart';
+import 'package:jobsque/presentation/reusable_components/job_application/JobPeopleListItem.dart';
 
 class JobPeopleTabView extends StatelessWidget {
   const JobPeopleTabView({super.key});

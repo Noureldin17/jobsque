@@ -65,7 +65,7 @@ class EmailCheckPage extends StatelessWidget {
                           buttonText: 'Open email app',
                           OnPrimaryButtonPressed: () {
                             Navigator.pushNamed(
-                                context, pages.createNewPasswordScreen);
+                                context, pages.Create_New_Password);
                           }),
                     ),
                   ),
