@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobsque/presentation/reusable_components/ChatDateSplitter.dart';
 import 'package:jobsque/presentation/reusable_components/ChatReceivedBubble.dart';
 import 'package:jobsque/presentation/reusable_components/ChatSentBubble.dart';
+import 'package:jobsque/presentation/reusable_components/ChatTextBar.dart';
+import 'package:jobsque/presentation/reusable_components/search/AppSearchBar.dart';
 import 'package:sizer/sizer.dart';
 
 class ChatViewScreen extends StatefulWidget {
@@ -25,6 +28,7 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
     return Sizer(
         builder: (context, orientation, deviceType) => SafeArea(
               child: Scaffold(
+                resizeToAvoidBottomInset: true,
                 backgroundColor: Colors.white,
                 body: Column(
                   children: [
@@ -89,21 +93,24 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
                     Divider(
                       thickness: 1.4,
                     ),
-                    Padding(padding: EdgeInsets.only(top: 25)),
-                    ChatReceivedBubble(
-                        TextMessage: 'Hi Rafif!, I'
-                            'm Melan the selection team from Twitter. Thank you for applying for a job at our company. We have announced that you are eligible for the interview stage.'),
-                    Padding(padding: EdgeInsets.only(top: 16)),
-                    ChatSentBubble(
-                        TextMessage:
-                            'Hi Melan, thank you for considering me, this is good news for me.'),
-                    Padding(padding: EdgeInsets.only(top: 16)),
-                    ChatReceivedBubble(
-                        TextMessage:
-                            'Can we have an interview via google meet call today at 3pm?'),
-                    Padding(padding: EdgeInsets.only(top: 16)),
-                    ChatSentBubble(TextMessage: 'Of course, I can!'),
-                    Padding(padding: EdgeInsets.only(top: 16)),
+                    ChatDateSplitter(),
+                    // Padding(padding: EdgeInsets.only(top: 25)),
+                    Expanded(
+                      child: ListView.builder(
+                        reverse: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: 20,
+                        itemBuilder: (context, index) {
+                          return ChatSentBubble(TextMessage: 'TextMessage');
+                        },
+                      ),
+                    ),
+
+                    Container(
+                        child: Padding(
+                      padding: const EdgeInsets.only(bottom: 10, top: 5),
+                      child: ChatTextBar(),
+                    ))
                   ],
                 ),
               ),

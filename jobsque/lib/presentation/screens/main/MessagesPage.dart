@@ -6,6 +6,7 @@ import 'package:jobsque/presentation/reusable_components/messages/MessagesListIt
 import 'package:jobsque/presentation/reusable_components/search/AppSearchBar.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class MessagesPage extends StatefulWidget {
   MessagesPage({super.key}) : isEmpty = true;
   double Height(double h) {

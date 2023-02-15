@@ -1,10 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ChatSentBubble extends StatelessWidget {
   const ChatSentBubble({super.key, required this.TextMessage});
@@ -12,7 +7,7 @@ class ChatSentBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 26),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 26),
       child: Align(
         alignment: Alignment.centerRight,
         child: Container(
@@ -24,7 +19,7 @@ class ChatSentBubble extends StatelessWidget {
                   bottomLeft: Radius.circular(8),
                   bottomRight: Radius.circular(8))),
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
                 constraints: BoxConstraints(maxWidth: 270),
@@ -32,6 +27,7 @@ class ChatSentBubble extends StatelessWidget {
                   TextMessage,
                   style: TextStyle(
                       fontFamily: 'SF Pro Display',
+                      height: 1.3,
                       color: Color.fromARGB(255, 244, 244, 245),
                       fontWeight: FontWeight.w400,
                       fontSize: 14),

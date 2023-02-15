@@ -7,6 +7,7 @@ import 'package:jobsque/presentation/reusable_components/EmptyNotificationsView.
 import 'package:sizer/sizer.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
+// ignore: must_be_immutable
 class NotificationsPage extends StatefulWidget {
   NotificationsPage({super.key});
   double Height(double h) {
