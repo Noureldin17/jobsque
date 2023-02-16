@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class WorkTypeSelection extends StatefulWidget {
-  WorkTypeSelection({super.key, required this.value, required this.GroupValue});
-  int? value;
-  int? GroupValue;
+  WorkTypeSelection(
+      {super.key,
+      required this.value,
+      required this.GroupValue,
+      required this.OnSelectionChange});
+  final Function OnSelectionChange;
+  final int value;
+  final int GroupValue;
   @override
   State<WorkTypeSelection> createState() => _WorkTypeSelectionState();
 }
@@ -28,7 +33,7 @@ class _WorkTypeSelectionState extends State<WorkTypeSelection> {
                     : Color.fromARGB(255, 209, 213, 219)),
             borderRadius: BorderRadius.circular(8)),
         child: RadioListTile(
-          toggleable: true,
+          // toggleable: true,
           contentPadding:
               const EdgeInsets.only(left: 16, top: 14, bottom: 16, right: 12),
           controlAffinity: ListTileControlAffinity.trailing,
@@ -36,9 +41,7 @@ class _WorkTypeSelectionState extends State<WorkTypeSelection> {
           groupValue: widget.GroupValue,
           value: widget.value,
           onChanged: (value) {
-            setState(() {
-              widget.GroupValue = value;
-            });
+            widget.OnSelectionChange(value);
           },
           title: Container(
             child: Row(

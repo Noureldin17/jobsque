@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobsque/presentation/reusable_components/ChatDateSplitter.dart';
-import 'package:jobsque/presentation/reusable_components/ChatReceivedBubble.dart';
-import 'package:jobsque/presentation/reusable_components/ChatSentBubble.dart';
-import 'package:jobsque/presentation/reusable_components/ChatTextBar.dart';
-import 'package:jobsque/presentation/reusable_components/search/AppSearchBar.dart';
+import 'package:jobsque/presentation/reusable_components/messages/ChatDateSplitter.dart';
+import 'package:jobsque/presentation/reusable_components/messages/ChatScreenModalSheet.dart';
+import 'package:jobsque/presentation/reusable_components/messages/ChatSentBubble.dart';
+import 'package:jobsque/presentation/reusable_components/messages/ChatTextBar.dart';
 import 'package:sizer/sizer.dart';
 
 class ChatViewScreen extends StatefulWidget {
@@ -85,7 +84,20 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
                               splashRadius: 20,
                               constraints:
                                   BoxConstraints(maxHeight: 40, maxWidth: 40),
-                              onPressed: () {},
+                              onPressed: () {
+                                showModalBottomSheet(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(30),
+                                    topRight: Radius.circular(30),
+                                  )),
+                                  isScrollControlled: true,
+                                  context: context,
+                                  builder: (context) {
+                                    return ChatScreenModalSheet();
+                                  },
+                                );
+                              },
                               icon: SvgPicture.asset("assets/icons/more.svg"))
                         ],
                       ),

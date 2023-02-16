@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobsque/presentation/reusable_components/ListDivider.dart';
-import 'package:jobsque/presentation/reusable_components/SavedJobListItem.dart';
-import 'package:jobsque/presentation/reusable_components/EmptySavedJobs.dart';
+import 'package:jobsque/presentation/reusable_components/saved/SavedJobListItem.dart';
+import 'package:jobsque/presentation/reusable_components/saved/EmptySavedJobs.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
@@ -32,9 +32,9 @@ class _HomePageState extends State<SavedPage> {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(
-                          left: widget.Width(26),
-                          top: widget.Height(31),
-                          right: widget.Width(26),
+                          left: widget.Width(24),
+                          top: widget.Height(31.5),
+                          right: widget.Width(24),
                           bottom: widget.Height(20)),
                       child: Row(
                         children: [

@@ -11,6 +11,13 @@ import 'package:sizer/sizer.dart';
 // ignore: must_be_immutable
 class JobApplicationStepOne extends StatefulWidget {
   JobApplicationStepOne({super.key});
+  double Height(double h) {
+    return ((h / 812) * 100).h;
+  }
+
+  double Width(double w) {
+    return ((w / 375) * 100).w;
+  }
 
   bool WorkTypeActive = false;
   bool UploadActive = false;

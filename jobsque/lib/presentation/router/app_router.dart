@@ -21,13 +21,18 @@ import 'package:jobsque/presentation/screens/home_screen_routes/JobDetailPage.da
 import 'package:jobsque/presentation/screens/home_screen_routes/JobSearchPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SearchResultsPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SubmittedApplicationPage.dart';
-import 'package:jobsque/presentation/reusable_components/ChatScreenView.dart';
+import 'package:jobsque/presentation/reusable_components/messages/ChatScreenView.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/EditProfilePage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/LanguageSettingPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/NotificationsSettingsPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/PortfolioUploadPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/SecuritySettings.dart';
 
 class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = ChatViewScreen();
+    startscreen = AppMainPage();
 
     switch (settings.name) {
       case '/':
@@ -74,6 +79,16 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ChatViewScreen());
       case pages.Notifications_Page:
         return MaterialPageRoute(builder: (_) => NotificationsPage());
+      case pages.Edit_Profile_Page:
+        return MaterialPageRoute(builder: (_) => EditProfilePage());
+      case pages.Portfolio_Upload_Page:
+        return MaterialPageRoute(builder: (_) => PortfolioUploadPage());
+      case pages.Language_Setting_Page:
+        return MaterialPageRoute(builder: (_) => LanguageSetting());
+      case pages.Notification_Setting_Page:
+        return MaterialPageRoute(builder: (_) => NotificationsSettings());
+      case pages.Security_Setting_Page:
+        return MaterialPageRoute(builder: (_) => SecuritySettings());
       default:
         return null;
     }

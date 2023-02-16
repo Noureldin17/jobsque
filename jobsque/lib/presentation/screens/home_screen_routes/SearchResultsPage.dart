@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque/presentation/reusable_components/ListDivider.dart';
-import 'package:jobsque/presentation/reusable_components/RecentJobItem.dart';
+import 'package:jobsque/presentation/reusable_components/home/RecentJobItem.dart';
 import 'package:jobsque/presentation/reusable_components/search/SearchNotFoundView.dart';
 import 'package:jobsque/presentation/reusable_components/search/SearchResultsAppBar.dart';
 import 'package:sizer/sizer.dart';

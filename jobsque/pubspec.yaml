@@ -40,7 +40,6 @@ dependencies:
   sticky_headers: "^0.3.0"
   badges: ^3.0.2
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -62,6 +61,7 @@ flutter:
     - assets/flag.svg
     - assets/twitter.png
     - assets/twitter4.png
+    - assets/ProfilePic.png
     - assets/image31.png
     - assets/DanaLogo.png
     - assets/DanaLogo.svg
@@ -91,6 +91,14 @@ flutter:
     - assets/icons/navbar_icons/briefcaseactive.svg
     - assets/icons/navbar_icons/profileactive.svg
     - assets/icons/bezier.svg
+    - assets/icons/logout.svg
+    - assets/icons/send.svg
+    - assets/icons/import.svg
+    - assets/icons/note.svg
+    - assets/icons/global.svg
+    - assets/icons/folder-favorite.svg
+    - assets/icons/camera.svg
+    - assets/icons/trash.svg
     - assets/icons/microphone-2.svg
     - assets/icons/paperclip-2.svg
     - assets/icons/more.svg
@@ -99,6 +107,7 @@ flutter:
     - assets/icons/arrow-left.svg
     - assets/icons/directbox-notif.svg
     - assets/icons/arrow-down.svg
+    - assets/icons/arrow-right-vector.svg
     - assets/icons/arrow-right_button.svg
     - assets/icons/search-illust.svg
     - assets/icons/search-status.svg
@@ -123,6 +132,16 @@ flutter:
     - assets/icons/pen-tool-2.svg
     - assets/icons/graph.svg
     - assets/arg.png
+    - assets/languages/england.png
+    - assets/languages/indonesia.png
+    - assets/languages/saudiarabia.png
+    - assets/languages/china.png
+    - assets/languages/netherlands.png
+    - assets/languages/france.png
+    - assets/languages/germany.png
+    - assets/languages/japan.png
+    - assets/languages/southkorea.png
+    - assets/languages/portugal.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

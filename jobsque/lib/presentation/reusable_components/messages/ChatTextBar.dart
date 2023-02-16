@@ -1,26 +1,33 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobsque/presentation/reusable_components/search/AppSearchBar.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class ChatTextBar extends StatefulWidget {
-  const ChatTextBar({super.key});
+  ChatTextBar({super.key});
   double Height(double h) {
     return ((h / 812) * 100).h;
   }
 
+  TextEditingController? controller;
   double Width(double w) {
     return ((w / 375) * 100).w;
   }
+
+  bool isEmpty = true;
 
   @override
   State<ChatTextBar> createState() => _ChatTextBarState();
 }
 
 class _ChatTextBarState extends State<ChatTextBar> {
+  @override
+  void initState() {
+    widget.controller = TextEditingController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -47,6 +54,18 @@ class _ChatTextBarState extends State<ChatTextBar> {
         ),
         Expanded(
             child: TextFormField(
+          onChanged: (value) {
+            if (widget.controller!.text.isNotEmpty) {
+              setState(() {
+                widget.isEmpty = false;
+              });
+            } else {
+              setState(() {
+                widget.isEmpty = true;
+              });
+            }
+          },
+          controller: widget.controller,
           onTap: () {},
           autofocus: false,
           decoration: InputDecoration(
@@ -95,9 +114,13 @@ class _ChatTextBarState extends State<ChatTextBar> {
             ),
             child: IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(
-                'assets/icons/microphone-2.svg',
-              ),
+              icon: widget.isEmpty
+                  ? SvgPicture.asset(
+                      'assets/icons/microphone-2.svg',
+                    )
+                  : SvgPicture.asset(
+                      'assets/icons/send.svg',
+                    ),
             ),
           ),
         ),

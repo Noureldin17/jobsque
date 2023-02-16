@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobsque/presentation/reusable_components/NotificationListItem.dart';
+import 'package:jobsque/presentation/reusable_components/notifications/NotificationListItem.dart';
 import 'package:jobsque/presentation/reusable_components/ListDivider.dart';
-import 'package:jobsque/presentation/reusable_components/EmptyNotificationsView.dart';
+import 'package:jobsque/presentation/reusable_components/notifications/EmptyNotificationsView.dart';
 import 'package:sizer/sizer.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 

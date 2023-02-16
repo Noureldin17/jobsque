@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jobsque/presentation/reusable_components/homeNotificationBanner.dart';
-import 'package:jobsque/presentation/reusable_components/homePageNameBanner.dart';
-import 'package:jobsque/presentation/reusable_components/jobCard.dart';
-import 'package:jobsque/presentation/reusable_components/recentJobItem.dart';
+import 'package:jobsque/presentation/reusable_components/home/homeNotificationBanner.dart';
+import 'package:jobsque/presentation/reusable_components/home/homePageNameBanner.dart';
+import 'package:jobsque/presentation/reusable_components/home/jobCard.dart';
+import 'package:jobsque/presentation/reusable_components/home/recentJobItem.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../reusable_components/search/AppSearchBar.dart';

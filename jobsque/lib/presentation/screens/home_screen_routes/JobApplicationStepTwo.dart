@@ -16,13 +16,20 @@ class JobApplicationStepTwo extends StatefulWidget {
 
   bool WorkTypeHighlited = false;
   bool UploadHighlited = false;
+
   @override
   State<JobApplicationStepTwo> createState() => _JobApplicationStepTwoState();
 }
 
 class _JobApplicationStepTwoState extends State<JobApplicationStepTwo> {
+  void OnSelectionChanges(int s) {
+    setState(() {
+      RadioTileGroupValue = s;
+    });
+  }
+
+  int RadioTileGroupValue = 1;
   List list = [1, 2, 3, 4];
-  int groupValue = 388;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -102,7 +109,8 @@ class _JobApplicationStepTwoState extends State<JobApplicationStepTwo> {
                   itemBuilder: (context, index) {
                     return WorkTypeSelection(
                       value: list[index],
-                      GroupValue: groupValue,
+                      GroupValue: RadioTileGroupValue,
+                      OnSelectionChange: OnSelectionChanges,
                     );
                   },
                 ),
