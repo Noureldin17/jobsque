@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/svg.dart';
 import 'package:jobsque/presentation/reusable_components/job_application/FileUploadForm.dart';
 import 'package:jobsque/presentation/reusable_components/job_application/FileUploadItem.dart';
 import 'package:sizer/sizer.dart';

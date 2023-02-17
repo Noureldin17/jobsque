@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 
 import 'package:jobsque/presentation/reusable_components/job_application/JobApplicationSteps.dart';

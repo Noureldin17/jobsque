@@ -123,7 +123,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => AppliedStepOne());
       case pages.Applied_Step_Two_Page:
         return MaterialPageRoute(builder: (_) => AppliedStepTwo());
-      case pages.Job_Application_Step_Three:
+      case pages.Applied_Step_Three_Page:
         return MaterialPageRoute(builder: (_) => AppliedStepThree());
       default:
         return null;
