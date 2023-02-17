@@ -113,6 +113,9 @@ class _ProfilePageState extends State<ProfilePage> {
                               Route: pages.Security_Setting_Page,
                               ItemText: 'Login and security',
                               IconAsset: 'assets/icons/lock.svg'),
+                          Padding(
+                              padding: EdgeInsetsDirectional.only(
+                                  top: widget.Height(22))),
                           ListDivider.left(divText: 'Others'),
                           Padding(
                               padding: EdgeInsetsDirectional.only(
@@ -122,15 +125,15 @@ class _ProfilePageState extends State<ProfilePage> {
                             ItemText: 'Accesibility',
                           ),
                           ProfileListItem(
-                            Route: pages.Edit_Profile_Page,
+                            Route: pages.Help_Center_Page,
                             ItemText: 'Help Center',
                           ),
                           ProfileListItem(
-                            Route: pages.Edit_Profile_Page,
+                            Route: pages.TermsAndConditions_Page,
                             ItemText: 'Terms & Conditions',
                           ),
                           ProfileListItem(
-                            Route: pages.Edit_Profile_Page,
+                            Route: pages.Privacy_Policy_Page,
                             ItemText: 'Privacy Policy',
                           ),
                         ],

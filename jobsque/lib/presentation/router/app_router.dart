@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepOne.dart';
+import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepThree.dart';
+import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepTwo.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/NotificationsPage.dart';
 import 'package:jobsque/presentation/screens/app_main_page.dart';
 import 'package:jobsque/presentation/screens/authentication/AccountSuccessPage.dart';
@@ -22,17 +25,26 @@ import 'package:jobsque/presentation/screens/home_screen_routes/JobSearchPage.da
 import 'package:jobsque/presentation/screens/home_screen_routes/SearchResultsPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SubmittedApplicationPage.dart';
 import 'package:jobsque/presentation/reusable_components/messages/ChatScreenView.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/ChangePasswordPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/EditProfilePage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/EmailAdressPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/HelpCenterPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/LanguageSettingPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/NotificationsSettingsPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/PhoneNumberPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/PhoneNumberVerification.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/PortfolioUploadPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/PrivacyPolicy.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/SecuritySettings.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/SixDigitCode.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/TermsAndConditions.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/TwoStepVerificationPage.dart';
 
 class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = AppMainPage();
+    startscreen = AppliedStepOne();
 
     switch (settings.name) {
       case '/':
@@ -89,6 +101,30 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => NotificationsSettings());
       case pages.Security_Setting_Page:
         return MaterialPageRoute(builder: (_) => SecuritySettings());
+      case pages.Email_Address_Page:
+        return MaterialPageRoute(builder: (_) => EmailAddressPage());
+      case pages.Phone_Number_Page:
+        return MaterialPageRoute(builder: (_) => PhoneNumberPage());
+      case pages.Change_Password_Page:
+        return MaterialPageRoute(builder: (_) => ChangePasswordPage());
+      case pages.Two_Step_Verification_Page:
+        return MaterialPageRoute(builder: (_) => TwoStepVerification());
+      case pages.Phone_Number_Verification_Page:
+        return MaterialPageRoute(builder: (_) => PhoneNumberVerification());
+      case pages.SixDigit_Code_Page:
+        return MaterialPageRoute(builder: (_) => SixDigitCode());
+      case pages.Help_Center_Page:
+        return MaterialPageRoute(builder: (_) => HelpCenterPage());
+      case pages.TermsAndConditions_Page:
+        return MaterialPageRoute(builder: (_) => TermsAndConditions());
+      case pages.Privacy_Policy_Page:
+        return MaterialPageRoute(builder: (_) => PrivacyPolicy());
+      case pages.Applied_Step_One_Page:
+        return MaterialPageRoute(builder: (_) => AppliedStepOne());
+      case pages.Applied_Step_Two_Page:
+        return MaterialPageRoute(builder: (_) => AppliedStepTwo());
+      case pages.Job_Application_Step_Three:
+        return MaterialPageRoute(builder: (_) => AppliedStepThree());
       default:
         return null;
     }

@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
+
 import 'package:jobsque/presentation/reusable_components/ListDivider.dart';
 import 'package:jobsque/presentation/reusable_components/profile/AccountAccessListItem.dart';
 import 'package:jobsque/presentation/reusable_components/profile/ProfileBar.dart';
@@ -33,11 +32,20 @@ class _SecuritySettingsState extends State<SecuritySettings> {
             Padding(padding: EdgeInsets.only(top: widget.Height(32))),
             ListDivider.left(divText: 'Account access'),
             Padding(padding: EdgeInsets.only(top: widget.Height(12))),
-            AccountAccessListItem(ItemText: 'Email address'),
-            AccountAccessListItem(ItemText: 'Phone number'),
-            AccountAccessListItem(ItemText: 'Change password'),
-            AccountAccessListItem(ItemText: 'Two-step verification'),
-            AccountAccessListItem(ItemText: 'Face ID'),
+            AccountAccessListItem.withLabel(
+                Route: pages.Email_Address_Page,
+                ItemText: 'Email address',
+                ItemLabel: 'rafifdian12@gmail.com'),
+            AccountAccessListItem(
+                ItemText: 'Phone number', Route: pages.Change_Password_Page),
+            AccountAccessListItem(
+                ItemText: 'Change password', Route: pages.Change_Password_Page),
+            AccountAccessListItem.withLabel(
+                ItemText: 'Two-step verification',
+                ItemLabel: 'Non active',
+                Route: pages.Two_Step_Verification_Page),
+            AccountAccessListItem(
+                ItemText: 'Face ID', Route: pages.Change_Password_Page),
           ]),
         ),
       ),

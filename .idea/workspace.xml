@@ -5,42 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962aecb-c9c0-46b3-8ce0-93f21b6b06c7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Jobsque.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Jobsque.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/constants/pages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/constants/pages.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/ChatDateSplitter.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/ChatScreenView.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/ChatTextBar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/EmptyNotificationsView.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/EmptySavedJobs.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/NotificationListItem.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/SavedJobModalSheet.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/chatReceivedBubble.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/chatSentBubble.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/homeNotificationBanner.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/homePageNameBanner.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/jobCard.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/job_application/workTypeApplicationItem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/job_application/workTypeApplicationItem.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/messages/MessagesListItem.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/messages/MessagesListItem.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/recentJobItem.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/reusable_components/savedJobListItem.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/router/app_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/router/app_router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/JobApplicationStepOne.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/JobApplicationStepOne.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/JobApplicationStepTwo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/JobApplicationStepTwo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/NotificationsPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/NotificationsPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/SearchResultsPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/home_screen_routes/SearchResultsPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/HomePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/HomePage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/MessagesPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/MessagesPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/ProfilePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/ProfilePage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/SavedPage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/SavedPage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobsque/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\noure\.android\avd\Pixel_3a_API_33_x86_64.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\noure\.android\avd\Nexus_6_API_33.avd]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -61,6 +33,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="jobsque" type="AndroidRunConfigurationType" factoryName="Android App">

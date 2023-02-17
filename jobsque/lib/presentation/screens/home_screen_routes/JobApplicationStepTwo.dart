@@ -7,6 +7,8 @@ import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:jobsque/presentation/reusable_components/job_application/WorkTypeApplicationItem.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../reusable_components/profile/ProfileBar.dart';
+
 // ignore: must_be_immutable
 class JobApplicationStepTwo extends StatefulWidget {
   JobApplicationStepTwo({super.key});
@@ -22,6 +24,14 @@ class JobApplicationStepTwo extends StatefulWidget {
 }
 
 class _JobApplicationStepTwoState extends State<JobApplicationStepTwo> {
+  double Height(double h) {
+    return ((h / 812) * 100).h;
+  }
+
+  double Width(double w) {
+    return ((w / 375) * 100).w;
+  }
+
   void OnSelectionChanges(int s) {
     setState(() {
       RadioTileGroupValue = s;
@@ -36,96 +46,101 @@ class _JobApplicationStepTwoState extends State<JobApplicationStepTwo> {
         child: Sizer(
       builder: (context, orientation, deviceType) => Scaffold(
         backgroundColor: Colors.white,
-        body: Padding(
-          padding: EdgeInsets.only(left: 26, right: 26),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 0, top: 31, right: 0),
-                child: Row(
-                  children: [
-                    IconButton(
-                        padding: EdgeInsets.all(0),
-                        splashRadius: 20,
-                        constraints:
-                            BoxConstraints(maxHeight: 40, maxWidth: 40),
-                        onPressed: () {},
-                        icon: SvgPicture.asset('assets/icons/arrow-left.svg')),
-                    Padding(
-                        padding: EdgeInsets.only(left: 100, top: 0, right: 0)),
-                    Text('Apply Job',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'SF Pro Display',
-                            color: Color.fromARGB(255, 17, 24, 39)))
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 31),
-                child: JobApplicationSteps(
-                  UploadActive: widget.UploadActive,
-                  UploadHighlited: widget.UploadHighlited,
-                  WorkTypeActive: widget.WorkTypeActive,
-                  WorkTypeHighlited: widget.WorkTypeHighlited,
-                ),
-              ),
-              Padding(padding: EdgeInsets.only(top: 32)),
-              Row(
+        body: Column(
+          children: [
+            ProfileBar.noIcon(BarTitle: 'Apply Job'),
+            Padding(
+              padding: EdgeInsets.only(left: Width(26), right: Width(26)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  // Padding(
+                  //   padding: EdgeInsets.only(top: Height(31)),
+                  //   child: Row(
+                  //     children: [
+                  //       IconButton(
+                  //           padding: EdgeInsets.all(0),
+                  //           splashRadius: 20,
+                  //           constraints:
+                  //               BoxConstraints(maxHeight: 40, maxWidth: 40),
+                  //           onPressed: () {},
+                  //           icon: SvgPicture.asset('assets/icons/arrow-left.svg')),
+                  //       Padding(padding: EdgeInsets.only(left: Width(95))),
+                  //       Text('Apply Job',
+                  //           style: TextStyle(
+                  //               fontSize: 20,
+                  //               fontWeight: FontWeight.w500,
+                  //               fontFamily: 'SF Pro Display',
+                  //               color: Color.fromARGB(255, 17, 24, 39))),
+                  //     ],
+                  //   ),
+                  // ),
+                  Padding(
+                    padding: EdgeInsets.only(top: Height(31)),
+                    child: JobApplicationSteps(
+                      UploadActive: widget.UploadActive,
+                      UploadHighlited: widget.UploadHighlited,
+                      WorkTypeActive: widget.WorkTypeActive,
+                      WorkTypeHighlited: widget.WorkTypeHighlited,
+                    ),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: Height(32))),
+                  Row(
                     children: [
-                      Text(
-                        'Type of work',
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'SF Pro Display',
-                            color: Color.fromARGB(255, 17, 24, 39)),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      Text(
-                        'Fill in your bio data correctly',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'SF Pro Display',
-                            color: Color.fromARGB(255, 107, 114, 128)),
-                      ),
-                      Padding(padding: EdgeInsets.only(top: 12)),
-                      // WorkTypeSelection()
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Type of work',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'SF Pro Display',
+                                color: Color.fromARGB(255, 17, 24, 39)),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: Height(5))),
+                          Text(
+                            'Fill in your bio data correctly',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'SF Pro Display',
+                                color: Color.fromARGB(255, 107, 114, 128)),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: Height(12))),
+                          // WorkTypeSelection()
+                        ],
+                      )
                     ],
-                  )
+                  ),
+                  Container(
+                    child: ListView.builder(
+                      physics: ScrollPhysics(parent: null),
+                      shrinkWrap: true,
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        return WorkTypeSelection(
+                          value: list[index],
+                          GroupValue: RadioTileGroupValue,
+                          OnSelectionChange: OnSelectionChanges,
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
-              Expanded(
-                child: ListView.builder(
-                  physics: ScrollPhysics(parent: null),
-                  shrinkWrap: true,
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return WorkTypeSelection(
-                      value: list[index],
-                      GroupValue: RadioTileGroupValue,
-                      OnSelectionChange: OnSelectionChanges,
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: PrimaryButton(
-                    buttonText: 'Next',
-                    OnPrimaryButtonPressed: () {
-                      Navigator.pushNamed(
-                          context, pages.Job_Application_Step_Three);
-                    }),
-              ),
-            ],
-          ),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(bottom: Height(20)),
+              child: PrimaryButton(
+                  buttonText: 'Next',
+                  OnPrimaryButtonPressed: () {
+                    Navigator.pushNamed(
+                        context, pages.Job_Application_Step_Three);
+                  }),
+            ),
+          ],
         ),
       ),
     ));

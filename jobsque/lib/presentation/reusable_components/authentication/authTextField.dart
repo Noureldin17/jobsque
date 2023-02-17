@@ -15,7 +15,7 @@ class AuthTextField extends StatefulWidget {
   AuthTextField(
       {super.key,
       this.hinttext,
-      this.prefixIcon,
+      required this.prefixIcon,
       this.suffixIcon,
       required this.isHidden,
       this.keyboardtype,

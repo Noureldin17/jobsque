@@ -1,23 +1,31 @@
-// import 'package:flutter/src/widgets/container.dart';
-// import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class PrimaryButton extends StatelessWidget {
-  final String? buttonText;
+// ignore: must_be_immutable
+class PrimaryButton extends StatefulWidget {
+  final String buttonText;
   final Function OnPrimaryButtonPressed;
-  const PrimaryButton(
+  bool? buttonDisabled;
+  PrimaryButton(
       {super.key,
+      this.buttonDisabled,
       required this.buttonText,
       required this.OnPrimaryButtonPressed});
 
   @override
+  State<PrimaryButton> createState() => _PrimaryButtonState();
+}
+
+class _PrimaryButtonState extends State<PrimaryButton> {
+  @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        OnPrimaryButtonPressed();
-      },
-      child: Text(buttonText!),
+      onPressed: widget.buttonDisabled == null
+          ? () {
+              widget.OnPrimaryButtonPressed();
+            }
+          : null,
+      child: Text(widget.buttonText),
       style: ElevatedButton.styleFrom(
         minimumSize: Size(87.2.w, 5.92.h),
         backgroundColor: Color(0xFF3366FF),
@@ -29,6 +37,7 @@ class PrimaryButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
+        // disabledBackgroundColor:
       ),
     );
   }

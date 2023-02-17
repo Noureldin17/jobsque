@@ -9,7 +9,19 @@ class JobApplicationSteps extends StatelessWidget {
     required this.WorkTypeActive,
     required this.UploadHighlited,
     required this.WorkTypeHighlited,
-  });
+  })  : circleHeight = 44,
+        circleWidth = 44;
+  const JobApplicationSteps.small({
+    super.key,
+    required this.UploadActive,
+    required this.WorkTypeActive,
+    required this.UploadHighlited,
+    required this.WorkTypeHighlited,
+  })  : circleHeight = 24,
+        circleWidth = 24;
+
+  final double circleWidth;
+  final double circleHeight;
 
   final bool WorkTypeActive;
   final bool UploadActive;
@@ -25,7 +37,12 @@ class JobApplicationSteps extends StatelessWidget {
       children: [
         Column(
           children: [
-            SvgPicture.asset('assets/job_app_steps/tick-circle.svg'),
+            SvgPicture.asset(
+              'assets/job_app_steps/tick-circle.svg',
+              width: circleWidth,
+              height: circleHeight,
+              fit: BoxFit.scaleDown,
+            ),
             Padding(padding: EdgeInsets.only(top: 8)),
             Text(
               'Biodata',
@@ -44,19 +61,33 @@ class JobApplicationSteps extends StatelessWidget {
             color: WorkTypeActive || WorkTypeHighlited
                 ? Color.fromARGB(255, 51, 102, 255)
                 : Color.fromARGB(255, 209, 213, 219),
+            fit: BoxFit.scaleDown,
           ),
         ),
         Container(
           child: Column(
             children: [
               WorkTypeHighlited
-                  ? SvgPicture.asset('assets/job_app_steps/tick-circle.svg')
+                  ? SvgPicture.asset(
+                      'assets/job_app_steps/tick-circle.svg',
+                      width: circleWidth,
+                      height: circleHeight,
+                      fit: BoxFit.scaleDown,
+                    )
                   : WorkTypeActive
                       ? SvgPicture.asset(
                           'assets/job_app_steps/step2.svg',
+                          width: circleWidth,
+                          height: circleHeight,
                           color: Color.fromARGB(255, 51, 102, 255),
+                          fit: BoxFit.scaleDown,
                         )
-                      : SvgPicture.asset('assets/job_app_steps/step2.svg'),
+                      : SvgPicture.asset(
+                          'assets/job_app_steps/step2.svg',
+                          width: circleWidth,
+                          height: circleHeight,
+                          fit: BoxFit.scaleDown,
+                        ),
               Padding(padding: EdgeInsets.only(top: 8)),
               Text(
                 'Type of work',
@@ -79,6 +110,7 @@ class JobApplicationSteps extends StatelessWidget {
               color: UploadActive & WorkTypeHighlited
                   ? Color.fromARGB(255, 51, 102, 255)
                   : Color.fromARGB(255, 209, 213, 219),
+              fit: BoxFit.scaleDown,
             ),
           ),
         ),
@@ -86,13 +118,26 @@ class JobApplicationSteps extends StatelessWidget {
           child: Column(
             children: [
               UploadHighlited & WorkTypeHighlited
-                  ? SvgPicture.asset('assets/job_app_steps/tick-circle.svg')
+                  ? SvgPicture.asset(
+                      'assets/job_app_steps/tick-circle.svg',
+                      width: circleWidth,
+                      height: circleHeight,
+                      fit: BoxFit.scaleDown,
+                    )
                   : UploadActive & WorkTypeHighlited
                       ? SvgPicture.asset(
                           'assets/job_app_steps/step3.svg',
                           color: Color.fromARGB(255, 51, 102, 255),
+                          width: circleWidth,
+                          height: circleHeight,
+                          fit: BoxFit.scaleDown,
                         )
-                      : SvgPicture.asset('assets/job_app_steps/step3.svg'),
+                      : SvgPicture.asset(
+                          'assets/job_app_steps/step3.svg',
+                          width: circleWidth,
+                          height: circleHeight,
+                          fit: BoxFit.scaleDown,
+                        ),
               Padding(padding: EdgeInsets.only(top: 8)),
               Text(
                 'Portfolio',

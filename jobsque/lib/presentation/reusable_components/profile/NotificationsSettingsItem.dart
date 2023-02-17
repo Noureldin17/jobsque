@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+// ignore: must_be_immutable
 class NotificationsSettingsItem extends StatefulWidget {
   NotificationsSettingsItem({super.key, required this.settingText})
       : isEnabled = true;

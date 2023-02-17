@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// import 'package:jobsque/constants/pages.dart' as pages;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 class AccountAccessListItem extends StatefulWidget {
-  const AccountAccessListItem({super.key, required this.ItemText});
+  const AccountAccessListItem(
+      {super.key, required this.ItemText, required this.Route})
+      : ItemLabel = '';
+  const AccountAccessListItem.withLabel(
+      {super.key,
+      required this.ItemText,
+      required this.ItemLabel,
+      required this.Route});
   final String ItemText;
+  final String ItemLabel;
+  final String Route;
+
   double Height(double h) {
     return ((h / 812) * 100).h;
   }
@@ -24,7 +33,7 @@ class _AccountAccessListItemState extends State<AccountAccessListItem> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (() {
-        // Navigator.pushNamed(context, Route);
+        Navigator.pushNamed(context, widget.Route);
       }),
       child: Container(
           padding: EdgeInsetsDirectional.fromSTEB(
@@ -44,6 +53,14 @@ class _AccountAccessListItemState extends State<AccountAccessListItem> {
                         color: Color.fromARGB(255, 17, 24, 39)),
                   ),
                   Spacer(),
+                  Text(
+                    widget.ItemLabel,
+                    style: TextStyle(
+                        fontFamily: 'SF Pro Display',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 107, 114, 128)),
+                  ),
                   IconButton(
                       padding: EdgeInsets.all(0),
                       splashRadius: 20,

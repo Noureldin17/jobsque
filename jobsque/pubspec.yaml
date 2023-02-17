@@ -39,6 +39,7 @@ dependencies:
   dotted_border: ^2.0.0+3
   sticky_headers: "^0.3.0"
   badges: ^3.0.2
+  pinput: ^2.2.8
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +60,7 @@ flutter:
   assets: 
     - assets/
     - assets/flag.svg
+    - assets/rejected-status.svg
     - assets/twitter.png
     - assets/twitter4.png
     - assets/ProfilePic.png
@@ -91,6 +93,7 @@ flutter:
     - assets/icons/navbar_icons/briefcaseactive.svg
     - assets/icons/navbar_icons/profileactive.svg
     - assets/icons/bezier.svg
+    - assets/icons/external-drive.svg
     - assets/icons/logout.svg
     - assets/icons/send.svg
     - assets/icons/import.svg

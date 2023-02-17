@@ -8,17 +8,11 @@ import 'package:jobsque/constants/pages.dart' as pages;
 
 import '../../reusable_components/job_application/JobApplicationSteps.dart';
 import '../../reusable_components/PrimaryButton.dart';
+import '../../reusable_components/profile/ProfileBar.dart';
 
 // ignore: must_be_immutable
 class JobApplicationStepThree extends StatefulWidget {
   JobApplicationStepThree({super.key});
-  double Height(double h) {
-    return ((h / 812) * 100).h;
-  }
-
-  double Width(double w) {
-    return ((w / 375) * 100).w;
-  }
 
   bool WorkTypeActive = false;
   bool UploadActive = true;
@@ -31,6 +25,14 @@ class JobApplicationStepThree extends StatefulWidget {
 }
 
 class _JobApplicationStepThreeState extends State<JobApplicationStepThree> {
+  double Height(double h) {
+    return ((h / 812) * 100).h;
+  }
+
+  double Width(double w) {
+    return ((w / 375) * 100).w;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,114 +42,116 @@ class _JobApplicationStepThreeState extends State<JobApplicationStepThree> {
         backgroundColor: Colors.white,
         body: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 26, right: 26),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 0, top: 31, right: 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      IconButton(
-                          padding: EdgeInsets.all(0),
-                          splashRadius: 20,
-                          constraints:
-                              BoxConstraints(maxHeight: 40, maxWidth: 40),
-                          onPressed: () {},
-                          icon:
-                              SvgPicture.asset('assets/icons/arrow-left.svg')),
-                      Padding(
-                          padding:
-                              EdgeInsets.only(left: 100, top: 0, right: 0)),
-                      Text('Apply Job',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'SF Pro Display',
-                              color: Color.fromARGB(255, 17, 24, 39))),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 31),
-                  child: JobApplicationSteps(
-                    UploadActive: widget.UploadActive,
-                    UploadHighlited: widget.UploadHighlited,
-                    WorkTypeActive: widget.WorkTypeActive,
-                    WorkTypeHighlited: widget.WorkTypeHighlited,
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 32)),
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.start,
+          child: Column(
+            children: [
+              ProfileBar.noIcon(BarTitle: 'Apply Job'),
+              Padding(
+                padding: EdgeInsets.only(left: Width(26), right: Width(26)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    // Padding(
+                    //   padding: EdgeInsets.only(top: Height(31)),
+                    //   child: Row(
+                    //     mainAxisSize: MainAxisSize.max,
+                    //     children: [
+                    //       IconButton(
+                    //           padding: EdgeInsets.all(0),
+                    //           splashRadius: 20,
+                    //           constraints:
+                    //               BoxConstraints(maxHeight: 40, maxWidth: 40),
+                    //           onPressed: () {},
+                    //           icon:
+                    //               SvgPicture.asset('assets/icons/arrow-left.svg')),
+                    //       Padding(padding: EdgeInsets.only(left: Width(95))),
+                    //       Text('Apply Job',
+                    //           style: TextStyle(
+                    //               fontSize: 20,
+                    //               fontWeight: FontWeight.w500,
+                    //               fontFamily: 'SF Pro Display',
+                    //               color: Color.fromARGB(255, 17, 24, 39))),
+                    //     ],
+                    //   ),
+                    // ),
+                    Padding(
+                      padding: EdgeInsets.only(top: Height(31)),
+                      child: JobApplicationSteps(
+                        UploadActive: widget.UploadActive,
+                        UploadHighlited: widget.UploadHighlited,
+                        WorkTypeActive: widget.WorkTypeActive,
+                        WorkTypeHighlited: widget.WorkTypeHighlited,
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: Height(32))),
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          'Upload portfolio',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: 'SF Pro Display',
-                              color: Color.fromARGB(255, 17, 24, 39)),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 4)),
-                        Text(
-                          'Fill in your bio data correctly',
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'SF Pro Display',
-                              color: Color.fromARGB(255, 107, 114, 128)),
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 28)),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Upload portfolio',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                  fontFamily: 'SF Pro Display',
+                                  color: Color.fromARGB(255, 17, 24, 39)),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: Height(4))),
+                            Text(
+                              'Fill in your bio data correctly',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'SF Pro Display',
+                                  color: Color.fromARGB(255, 107, 114, 128)),
+                            ),
+                            Padding(padding: EdgeInsets.only(top: Height(28))),
+                          ],
+                        )
                       ],
-                    )
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Upload CV*',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'SF Pro Display',
+                            color: Color.fromARGB(255, 17, 24, 39)),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: Height(12))),
+                    FileUploadItem(),
+                    Padding(padding: EdgeInsets.only(top: Height(18))),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Other File',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'SF Pro Display',
+                            color: Color.fromARGB(255, 17, 24, 39)),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(top: Height(12))),
+                    FileUploadForm(),
                   ],
                 ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Upload CV*',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'SF Pro Display',
-                        color: Color.fromARGB(255, 17, 24, 39)),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 12)),
-                FileUploadItem(),
-                Padding(padding: EdgeInsets.only(top: 18)),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Other File',
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: 'SF Pro Display',
-                        color: Color.fromARGB(255, 17, 24, 39)),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: widget.Height(12))),
-                FileUploadForm(),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(
-                      bottom: widget.Height(20), top: widget.Height(0)),
-                  child: PrimaryButton(
-                      buttonText: 'Submit',
-                      OnPrimaryButtonPressed: () {
-                        Navigator.pushNamed(
-                            context, pages.Job_Application_Submitted);
-                      }),
-                ),
-              ],
-            ),
+              ),
+              Spacer(),
+              Padding(
+                padding: EdgeInsets.only(bottom: Height(20), top: Height(0)),
+                child: PrimaryButton(
+                    buttonText: 'Submit',
+                    OnPrimaryButtonPressed: () {
+                      Navigator.pushNamed(
+                          context, pages.Job_Application_Submitted);
+                    }),
+              ),
+            ],
           ),
         ),
       ),
