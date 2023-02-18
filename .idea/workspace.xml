@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962aecb-c9c0-46b3-8ce0-93f21b6b06c7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Jobsque.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Jobsque.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsque/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/ProfilePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/lib/presentation/screens/main/ProfilePage.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsque/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobsque/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/jobsque/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\noure\.android\avd\Nexus_6_API_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\noure\.android\avd\Pixel_3a_API_33_x86_64.avd]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>

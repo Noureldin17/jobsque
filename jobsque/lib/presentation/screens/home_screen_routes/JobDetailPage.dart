@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:jobsque/constants/pages.dart' as pages;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:jobsque/presentation/reusable_components/TabsWidget.dart';
@@ -195,7 +195,11 @@ class _JobDetailPageState extends State<JobDetailPage>
                   Padding(
                     padding: EdgeInsets.only(bottom: widget.Height(20)),
                     child: PrimaryButton(
-                        buttonText: 'Apply', OnPrimaryButtonPressed: () {}),
+                        buttonText: 'Apply',
+                        OnPrimaryButtonPressed: () {
+                          Navigator.pushNamed(
+                              context, pages.Job_Application_Step_One);
+                        }),
                   )
                 ],
               ),

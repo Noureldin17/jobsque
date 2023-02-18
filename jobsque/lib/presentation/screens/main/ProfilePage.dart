@@ -95,8 +95,11 @@ class _ProfilePageState extends State<ProfilePage> {
                           ProfileListItem.hasIcon(
                               Route: pages.Edit_Profile_Page,
                               ItemText: 'Edit Profile',
-                              IconAsset:
-                                  'assets/icons/navbar_icons/profile.svg'),
+                              IconAsset: 'assets/icons/user-edit.svg'),
+                          ProfileListItem.hasIcon(
+                              Route: pages.Complete_Profile_Page,
+                              ItemText: 'Complete Profile',
+                              IconAsset: 'assets/icons/profile-tick.svg'),
                           ProfileListItem.hasIcon(
                               Route: pages.Portfolio_Upload_Page,
                               ItemText: 'Portfolio',

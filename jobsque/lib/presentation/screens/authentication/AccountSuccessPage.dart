@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
 import 'package:sizer/sizer.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 class AccountSuccess extends StatelessWidget {
   const AccountSuccess({super.key});
@@ -26,11 +27,16 @@ class AccountSuccess extends StatelessWidget {
                         Width(24)!, Height(24)!, 0, 0),
                     child: Row(
                       children: [
-                        SvgPicture.asset(
-                          'assets/icons/arrow-left.svg',
-                          fit: BoxFit.scaleDown,
-                          color: Color.fromARGB(255, 41, 45, 50),
-                        ),
+                        IconButton(
+                            padding: EdgeInsets.all(0),
+                            splashRadius: 20,
+                            constraints:
+                                BoxConstraints(maxHeight: 40, maxWidth: 40),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: SvgPicture.asset(
+                                'assets/icons/arrow-left.svg')),
                       ],
                     ),
                   ),
@@ -74,13 +80,12 @@ class AccountSuccess extends StatelessWidget {
                     child: Container(
                       child: PrimaryButton(
                           buttonText: 'Get Started',
-                          OnPrimaryButtonPressed: () {}),
+                          OnPrimaryButtonPressed: () {
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, pages.App_Main_Page, (route) => false);
+                          }),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(24)!, Height(0)!, Width(24)!, Height(20)!),
-                  )
                 ],
               ),
             )));

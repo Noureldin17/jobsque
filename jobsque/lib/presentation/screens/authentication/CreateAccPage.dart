@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jobsque/presentation/reusable_components/authentication/PlatformAuthBtn.dart';
 import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:jobsque/constants/pages.dart' as pages;
 import '../../reusable_components/authentication/AuthTextField.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
@@ -71,11 +71,16 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                SvgPicture.asset(
-                                  'assets/icons/arrow-left.svg',
-                                  fit: BoxFit.scaleDown,
-                                  color: Color.fromARGB(255, 41, 45, 50),
-                                ),
+                                IconButton(
+                                    padding: EdgeInsets.all(0),
+                                    splashRadius: 20,
+                                    constraints: BoxConstraints(
+                                        maxHeight: 40, maxWidth: 40),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    icon: SvgPicture.asset(
+                                        'assets/icons/arrow-left.svg')),
                                 SvgPicture.asset(
                                   'assets/Logo.svg',
                                   width: _calculateWidth(81),
@@ -216,12 +221,17 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       7, 0, 0, 0),
-                                  child: Text(
-                                    'Login',
-                                    style: TextStyle(
-                                      fontFamily: 'SF Pro Display',
-                                      color: Color(0xFF3366FF),
-                                      fontWeight: FontWeight.w500,
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      'Login',
+                                      style: TextStyle(
+                                        fontFamily: 'SF Pro Display',
+                                        color: Color(0xFF3366FF),
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -232,7 +242,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                             child: PrimaryButton(
-                              OnPrimaryButtonPressed: () {},
+                              OnPrimaryButtonPressed: () {
+                                Navigator.pushNamed(
+                                    context, pages.Interests_Select);
+                              },
                               buttonText: "Create Account",
                             ),
                           ),
@@ -264,7 +277,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                                       style: TextStyle(
                                         fontFamily: 'SF Pro Display',
                                         color: Color(0xFF6B7280),
-                                        fontWeight: FontWeight.normal,
+                                        fontWeight: FontWeight.w500,
                                       )),
                                 ),
                                 Padding(

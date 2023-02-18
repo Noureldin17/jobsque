@@ -36,3 +36,7 @@ const Privacy_Policy_Page = 'Privacy_Policy_Page';
 const Applied_Step_One_Page = 'Applied_Step_One_Page';
 const Applied_Step_Two_Page = 'Applied_Step_Two_Page';
 const Applied_Step_Three_Page = 'Applied_Step_Three_Page';
+const Complete_Profile_Page = 'Complete_Profile_Page';
+const Personal_Details_Page = 'Personal_Details_Page';
+const Education_Page = 'Education_Page';
+const Experience_Page = 'Experience_Page';

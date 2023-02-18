@@ -68,7 +68,9 @@ class _NotificationsPageState extends State<NotificationsPage> {
                               splashRadius: 20,
                               constraints:
                                   BoxConstraints(maxHeight: 40, maxWidth: 40),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                               icon: SvgPicture.asset(
                                   'assets/icons/arrow-left.svg')),
                           Padding(

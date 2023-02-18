@@ -81,12 +81,6 @@ class _InterestsPageState extends State<InterestsPage> {
                           Navigator.pushNamed(context, pages.Locations_Select);
                         }),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        0, 0, 0, widget.Height(20)!),
-                    child: PrimaryButton(
-                        buttonText: "Next", OnPrimaryButtonPressed: () {}),
-                  ),
                 ],
               )),
             ));

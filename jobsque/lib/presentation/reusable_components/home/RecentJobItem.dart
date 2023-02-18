@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 // ignore: must_be_immutable
 class RecentJobItem extends StatefulWidget {
@@ -27,7 +28,9 @@ class _RecentJobItemState extends State<RecentJobItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, pages.Job_Details_Page);
+      },
       child: Container(
         padding: EdgeInsetsDirectional.fromSTEB(
             widget.Width(24)!, widget.Height(22.5)!, widget.Width(24)!, 0),

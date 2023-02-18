@@ -102,7 +102,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         style: TextStyle(
                                             fontFamily: 'SF Pro Display',
                                             fontSize: 16,
-                                            fontWeight: FontWeight.normal)),
+                                            fontWeight: FontWeight.w400)),
                                   ),
                                 ],
                               ),
@@ -188,7 +188,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               'Remember me',
                               style: TextStyle(
                                 fontFamily: 'SF Pro Display',
-                                fontWeight: FontWeight.normal,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                             Padding(
@@ -201,7 +201,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 'Forgot Password?',
                                 style: TextStyle(
                                     fontFamily: 'SF Pro Display',
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w500,
                                     color: Color(0xFF3366FF)),
                               ),
                             ),
@@ -220,6 +220,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               child: Text(
                                 'Don\'t have an account?',
                                 style: TextStyle(
+                                  color: Color.fromARGB(255, 156, 163, 175),
                                   fontFamily: 'SF Pro Display',
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -249,7 +250,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0, _calculateHeight(24)!, 0, 0),
                           child: PrimaryButton(
-                            OnPrimaryButtonPressed: () {},
+                            OnPrimaryButtonPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, pages.App_Main_Page);
+                            },
                             buttonText: "Login",
                           )),
                       Padding(
@@ -284,7 +288,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   style: TextStyle(
                                     fontFamily: 'SF Pro Display',
                                     color: Color(0xFF6B7280),
-                                    fontWeight: FontWeight.normal,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 )),
                             Padding(

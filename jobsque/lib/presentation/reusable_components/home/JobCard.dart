@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 // ignore: must_be_immutable
 class JobInfoCard extends StatefulWidget {
@@ -179,10 +180,7 @@ class _JobInfoCardState extends State<JobInfoCard> {
                 ])),
                 ElevatedButton(
                   onPressed: () {
-                    print(MediaQuery.of(context).size.height);
-                    print(MediaQuery.of(context).size.width);
-                    print(100.h);
-                    print(100.w);
+                    Navigator.pushNamed(context, pages.Job_Details_Page);
                   },
                   child: Text('Apply now'),
                   style: ElevatedButton.styleFrom(

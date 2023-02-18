@@ -27,14 +27,18 @@ import 'package:jobsque/presentation/screens/home_screen_routes/SubmittedApplica
 import 'package:jobsque/presentation/reusable_components/messages/ChatScreenView.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/ChangePasswordPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/EditProfilePage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/EducationPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/EmailAdressPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/ExperiencePage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/HelpCenterPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/LanguageSettingPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/NotificationsSettingsPage.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/PersonalDetailsPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/PhoneNumberPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/PhoneNumberVerification.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/PortfolioUploadPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/PrivacyPolicy.dart';
+import 'package:jobsque/presentation/screens/profile_screen_routes/ProfileCompletionPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/SecuritySettings.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/SixDigitCode.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/TermsAndConditions.dart';
@@ -44,7 +48,7 @@ class AppRouter {
   late Widget startscreen;
 
   Route? onGenerateRoute(RouteSettings settings) {
-    startscreen = AppliedStepOne();
+    startscreen = SplashScreen();
 
     switch (settings.name) {
       case '/':
@@ -125,6 +129,14 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => AppliedStepTwo());
       case pages.Applied_Step_Three_Page:
         return MaterialPageRoute(builder: (_) => AppliedStepThree());
+      case pages.Complete_Profile_Page:
+        return MaterialPageRoute(builder: (_) => ProfileCompletionPage());
+      case pages.Personal_Details_Page:
+        return MaterialPageRoute(builder: (_) => PersonalDetailsPage());
+      case pages.Education_Page:
+        return MaterialPageRoute(builder: (_) => EducationFormPage());
+      case pages.Experience_Page:
+        return MaterialPageRoute(builder: (_) => ExperiencePage());
       default:
         return null;
     }

@@ -45,7 +45,9 @@ class _ChatViewScreenState extends State<ChatViewScreen> {
                               splashRadius: 20,
                               constraints:
                                   BoxConstraints(maxHeight: 40, maxWidth: 40),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
                               icon: SvgPicture.asset(
                                   'assets/icons/arrow-left.svg')),
 
