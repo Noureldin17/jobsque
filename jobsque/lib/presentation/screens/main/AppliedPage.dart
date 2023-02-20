@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
+import 'package:jobsque/business_logic/cubit/job_listings_cubit.dart';
 import 'package:jobsque/presentation/reusable_components/TabsWidget.dart';
 import 'package:jobsque/presentation/reusable_components/profile/ProfileBar.dart';
 import 'package:jobsque/presentation/views/AppliedJobsRejectedView.dart';
@@ -11,6 +11,7 @@ import 'package:jobsque/constants/pages.dart' as pages;
 class AppliedPage extends StatefulWidget {
   AppliedPage({super.key});
   TabController? tabController;
+  JobListingsCubit? cubit;
   @override
   State<AppliedPage> createState() => _HomePageState();
 }
@@ -18,6 +19,7 @@ class AppliedPage extends StatefulWidget {
 class _HomePageState extends State<AppliedPage> with TickerProviderStateMixin {
   @override
   void initState() {
+    widget.cubit = JobListingsCubit.get(context);
     widget.tabController = TabController(length: 2, vsync: this);
     super.initState();
   }
@@ -63,7 +65,9 @@ class _HomePageState extends State<AppliedPage> with TickerProviderStateMixin {
                         child: TabBarView(
                       controller: widget.tabController,
                       children: [
-                        AppliedJobsView(),
+                        AppliedJobsView(
+                          list: widget.cubit!.AppliedList,
+                        ),
                         AppliedJobsRejected(),
                       ],
                     ))

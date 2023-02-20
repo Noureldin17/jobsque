@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsque/business_logic/cubit/job_listings_cubit.dart';
+import 'package:jobsque/business_logic/cubit/messages_cubit.dart';
+import 'package:jobsque/data/models/argument_models/job_detail_arguments.dart';
 import 'package:jobsque/data/models/job_listing_model.dart';
 import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepOne.dart';
 import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepThree.dart';
@@ -27,7 +29,7 @@ import 'package:jobsque/presentation/screens/home_screen_routes/JobDetailPage.da
 import 'package:jobsque/presentation/screens/home_screen_routes/JobSearchPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SearchResultsPage.dart';
 import 'package:jobsque/presentation/screens/home_screen_routes/SubmittedApplicationPage.dart';
-import 'package:jobsque/presentation/reusable_components/messages/ChatScreenView.dart';
+import 'package:jobsque/presentation/screens/home_screen_routes/ChatScreenView.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/ChangePasswordPage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/EditProfilePage.dart';
 import 'package:jobsque/presentation/screens/profile_screen_routes/EducationPage.dart';
@@ -79,31 +81,46 @@ class AppRouter {
       case pages.Password_Changed_Success:
         return MaterialPageRoute(builder: (_) => PasswordChangeSuccess());
       case pages.App_Main_Page:
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-                  create: ((context) => JobListingsCubit()),
-                  child: AppMainPage(),
-                ));
+        return MaterialPageRoute(builder: (_) => AppMainPage());
       case pages.Job_Search_Page:
         return MaterialPageRoute(builder: (_) => JobSearchPage());
       case pages.Job_Details_Page:
-        final JobListing listing = settings.arguments as JobListing;
+        final args = settings.arguments as JobDetailArguments;
         return MaterialPageRoute(
             builder: (_) => JobDetailPage(
-                  listing: listing,
+                  OnSave: args.OnSave,
+                  listing: args.listing,
                 ));
       case pages.Search_Results_Page:
         return MaterialPageRoute(builder: (_) => SearchResultsPage());
       case pages.Job_Application_Step_One:
-        return MaterialPageRoute(builder: (_) => JobApplicationStepOne());
+        final Function OnNext = settings.arguments as Function;
+        return MaterialPageRoute(
+            builder: (_) => JobApplicationStepOne(
+                  OnNext: OnNext,
+                ));
       case pages.Job_Application_Step_Two:
-        return MaterialPageRoute(builder: (_) => JobApplicationStepTwo());
+        final Function OnNext = settings.arguments as Function;
+
+        return MaterialPageRoute(
+            builder: (_) => JobApplicationStepTwo(
+                  OnNext: OnNext,
+                ));
       case pages.Job_Application_Step_Three:
-        return MaterialPageRoute(builder: (_) => JobApplicationStepThree());
+        final Function OnNext = settings.arguments as Function;
+
+        return MaterialPageRoute(
+            builder: (_) => JobApplicationStepThree(
+                  OnNext: OnNext,
+                ));
       case pages.Job_Application_Submitted:
         return MaterialPageRoute(builder: (_) => ApplicationSubmittedPage());
       case pages.Chat_View_Screen:
-        return MaterialPageRoute(builder: (_) => ChatViewScreen());
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => MessagesCubit(),
+                  child: ChatViewScreen(),
+                ));
       case pages.Notifications_Page:
         return MaterialPageRoute(builder: (_) => NotificationsPage());
       case pages.Edit_Profile_Page:

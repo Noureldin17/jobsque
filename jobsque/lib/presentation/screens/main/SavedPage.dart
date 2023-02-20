@@ -28,11 +28,13 @@ class SavedPage extends StatefulWidget {
 }
 
 class _HomePageState extends State<SavedPage> {
-  List<JobListing> SavedList = [];
+  List<JobListing>? SavedList;
   @override
   void initState() {
+    print("SAVED PAGE REBUILT");
     widget.cubit = JobListingsCubit.get(context);
-    SavedList = widget.cubit!.SavedList;
+    SavedList = JobListingsCubit.get(context).SavedList;
+    print(SavedList!.length);
     super.initState();
   }
 
@@ -77,20 +79,19 @@ class _HomePageState extends State<SavedPage> {
                             ],
                           ),
                         ),
-                        SavedList.isEmpty
+                        SavedList!.isEmpty
                             ? EmptySavedList()
                             : ListDivider(
-                                divText: '${SavedList.length} Saved Jobs'),
-                        if (!SavedList.isEmpty)
+                                divText: '${SavedList!.length} Saved Jobs'),
+                        if (!SavedList!.isEmpty)
                           Expanded(
                             child: ListView.builder(
-                              itemCount: SavedList.length,
+                              itemCount: widget.cubit!.SavedList.length,
                               itemBuilder: (context, index) {
                                 return SavedListItem(
-                                  listing: SavedList[index],
+                                  listing: widget.cubit!.SavedList[index],
                                   OnCancelSave: () {
-                                    widget.cubit!
-                                        .unsaveJob(SavedList[index].id);
+                                    widget.cubit!.unsaveJob(SavedList![index]);
                                     print("unsaved");
                                   },
                                 );

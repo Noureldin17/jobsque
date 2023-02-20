@@ -11,8 +11,9 @@ import '../../reusable_components/profile/ProfileBar.dart';
 
 // ignore: must_be_immutable
 class JobApplicationStepThree extends StatefulWidget {
-  JobApplicationStepThree({super.key});
+  const JobApplicationStepThree({super.key, required this.OnNext});
 
+  final Function OnNext;
   @override
   State<JobApplicationStepThree> createState() =>
       _JobApplicationStepThreeState();
@@ -155,6 +156,7 @@ class _JobApplicationStepThreeState extends State<JobApplicationStepThree> {
                   child: PrimaryButton(
                       buttonText: 'Submit',
                       OnPrimaryButtonPressed: () {
+                        widget.OnNext();
                         Navigator.pushNamed(
                             context, pages.Job_Application_Submitted);
                       }),

@@ -12,16 +12,28 @@ class JobListingsCubit extends Cubit<JobListingsState> {
 
   List<JobListing> JobsList = jobs.listings;
   List<JobListing> SavedList = [];
+  List<JobListing> AppliedList = [];
 
-  void saveJob(int id) {
-    JobsList[id - 1].isSaved = true;
-    SavedList.add(JobsList[id - 1]);
+  void saveJob(JobListing listing) {
+    print("ITEM SAVED !!!!");
+    var i = JobsList.indexOf(listing);
+    JobsList[i].isSaved = true;
+    SavedList.add(listing);
     emit(JobListingSaved());
   }
 
-  void unsaveJob(int id) {
-    JobsList[id - 1].isSaved = false;
-    SavedList.remove(JobsList[id - 1]);
+  void unsaveJob(JobListing listing) {
+    print("ITEM UNSAVED !!!!");
+    var i = JobsList.indexOf(listing);
+    JobsList[i].isSaved = false;
+    SavedList.remove(listing);
     emit(JobListingSaved());
+  }
+
+  void applyJob(JobListing listing) {
+    var i = JobsList.indexOf(listing);
+    JobsList[i].isApplied = true;
+    if (!AppliedList.contains(listing)) AppliedList.add(listing);
+    emit(JobListingApplied());
   }
 }

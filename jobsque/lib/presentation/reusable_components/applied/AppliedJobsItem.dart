@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobsque/data/models/job_listing_model.dart';
 import 'package:jobsque/presentation/reusable_components/job_application/JobApplicationSteps.dart';
 import 'package:sizer/sizer.dart';
 
 class AppliedJobsItem extends StatefulWidget {
-  const AppliedJobsItem({super.key});
+  const AppliedJobsItem({super.key, required this.listing});
+  final JobListing listing;
   @override
   State<AppliedJobsItem> createState() => _AppliedJobsItemState();
 }
@@ -37,7 +39,7 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
             Row(
               children: [
                 SvgPicture.asset(
-                  'assets/icons/TwitterLogo.svg',
+                  widget.listing.imageAsset,
                   height: Height(40),
                   width: Width(40),
                 ),
@@ -49,7 +51,7 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                       Text(
-                        'Senior UI Designer',
+                        widget.listing.title,
                         style: TextStyle(
                           fontFamily: 'SF Pro Display',
                           fontWeight: FontWeight.w500,
@@ -61,7 +63,7 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0, Height(4), 0, 0)),
                       Text(
-                        'Twitter • Jakarta, Indonesia ',
+                        '${widget.listing.company} • ${widget.listing.location} ',
                         style: TextStyle(
                           fontFamily: 'SF Pro Display',
                           fontWeight: FontWeight.w500,
@@ -77,7 +79,9 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                       });
                     },
                     icon: SvgPicture.asset(
-                      ItemSaved ? activeSaveIconAsset! : saveIconAsset!,
+                      widget.listing.isSaved
+                          ? activeSaveIconAsset!
+                          : saveIconAsset!,
                       height: Height(40),
                       width: Width(40),
                       fit: BoxFit.scaleDown,
@@ -96,7 +100,7 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                       Container(
                         child: Center(
                           child: Text(
-                            'Fulltime',
+                            widget.listing.type,
                             style: TextStyle(
                               fontFamily: 'SF Pro Display',
                               fontWeight: FontWeight.w400,
@@ -118,7 +122,7 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                       Container(
                         child: Center(
                           child: Text(
-                            'Remote',
+                            widget.listing.workplace,
                             style: TextStyle(
                               fontFamily: 'SF Pro Display',
                               fontWeight: FontWeight.w400,
@@ -161,7 +165,8 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                       width: 1, color: Color.fromARGB(255, 209, 213, 219))),
               constraints:
                   BoxConstraints(maxWidth: Width(327), maxHeight: Height(75)),
-              child: JobApplicationSteps.small(stepNumber: 2),
+              child: JobApplicationSteps.small(
+                  stepNumber: widget.listing.applicationStep),
             ),
             Padding(padding: EdgeInsets.only(top: Height(12))),
             Divider(

@@ -5,12 +5,13 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class ChatTextBar extends StatefulWidget {
-  ChatTextBar({super.key});
+  ChatTextBar({super.key, required this.OnSendPressed});
+
+  final Function OnSendPressed;
   double Height(double h) {
     return ((h / 812) * 100).h;
   }
 
-  TextEditingController? controller;
   double Width(double w) {
     return ((w / 375) * 100).w;
   }
@@ -22,9 +23,10 @@ class ChatTextBar extends StatefulWidget {
 }
 
 class _ChatTextBarState extends State<ChatTextBar> {
+  TextEditingController controller = TextEditingController();
   @override
   void initState() {
-    widget.controller = TextEditingController();
+    // widget.controller = TextEditingController();
     super.initState();
   }
 
@@ -55,7 +57,7 @@ class _ChatTextBarState extends State<ChatTextBar> {
         Expanded(
             child: TextFormField(
           onChanged: (value) {
-            if (widget.controller!.text.isNotEmpty) {
+            if (controller.text.isNotEmpty) {
               setState(() {
                 widget.isEmpty = false;
               });
@@ -65,7 +67,7 @@ class _ChatTextBarState extends State<ChatTextBar> {
               });
             }
           },
-          controller: widget.controller,
+          controller: controller,
           onTap: () {},
           autofocus: false,
           decoration: InputDecoration(
@@ -113,7 +115,12 @@ class _ChatTextBarState extends State<ChatTextBar> {
               border: Border.all(color: Color.fromARGB(255, 209, 213, 219)),
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (!widget.isEmpty) {
+                  widget.OnSendPressed(controller.text);
+                  controller.clear();
+                }
+              },
               icon: widget.isEmpty
                   ? SvgPicture.asset(
                       'assets/icons/microphone-2.svg',

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobsque/business_logic/cubit/job_listings_cubit.dart';
-import 'package:jobsque/presentation/screens/home_screen_routes/JobDetailPage.dart';
+import 'package:jobsque/data/models/argument_models/job_detail_arguments.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 
@@ -9,18 +8,16 @@ import '../../../data/models/job_listing_model.dart';
 
 // ignore: must_be_immutable
 class JobListingItem extends StatefulWidget {
-  JobListingItem({super.key, required this.listing
-      // required this.imageAsset,
-      // required this.title,
-      // required this.level,
-      // required this.type,
-      // required this.workplace,
-      // required this.company,
-      // required this.location,
-      // required this.monthlySalary,
-      });
+  JobListingItem(
+      {super.key,
+      required this.listing,
+      required this.OnSavePressed,
+      this.index});
 
+  final Function OnSavePressed;
+  int? index;
   bool ItemSaved = false;
+
   String? activeSaveIconAsset =
       'assets/icons/navbar_icons/archive-minusactive.svg';
   String? saveIconAsset = 'assets/icons/navbar_icons/archive-minus.svg';
@@ -41,11 +38,21 @@ class JobListingItem extends StatefulWidget {
 
 class _JobListingItemState extends State<JobListingItem> {
   @override
+  void initState() {
+    if (widget.listing.id == 1) print(widget.listing.isSaved);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
         Navigator.pushNamed(context, pages.Job_Details_Page,
-            arguments: widget.listing);
+            arguments: JobDetailArguments(
+                OnSave: () {
+                  widget.OnSavePressed(widget.listing);
+                },
+                listing: widget.listing));
       },
       child: Container(
         padding: EdgeInsetsDirectional.fromSTEB(
@@ -93,13 +100,15 @@ class _JobListingItemState extends State<JobListingItem> {
                     onPressed: () {
                       setState(() {
                         widget.ItemSaved = !widget.ItemSaved;
-                        if (widget.listing.isSaved) {
-                          JobListingsCubit.get(context)
-                              .unsaveJob(widget.listing.id);
-                        } else {
-                          JobListingsCubit.get(context)
-                              .saveJob(widget.listing.id);
-                        }
+
+                        widget.OnSavePressed(widget.listing);
+                        // if (widget.listing.isSaved) {
+                        //   JobListingsCubit.get(context)
+                        //       .unsaveJob(widget.listing.id);
+                        // } else {
+                        //   JobListingsCubit.get(context)
+                        //       .saveJob(widget.listing.id);
+                        // }
                       });
                     },
                     icon: SvgPicture.asset(
@@ -110,7 +119,7 @@ class _JobListingItemState extends State<JobListingItem> {
                       width: widget.Width(40),
                       fit: BoxFit.scaleDown,
                       alignment: Alignment.centerRight,
-                    )),
+                    ))
               ],
             ),
             Padding(

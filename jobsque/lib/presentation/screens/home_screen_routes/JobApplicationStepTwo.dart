@@ -8,10 +8,9 @@ import 'package:sizer/sizer.dart';
 
 import '../../reusable_components/profile/ProfileBar.dart';
 
-// ignore: must_be_immutable
 class JobApplicationStepTwo extends StatefulWidget {
-  JobApplicationStepTwo({super.key});
-
+  const JobApplicationStepTwo({super.key, required this.OnNext});
+  final Function OnNext;
   @override
   State<JobApplicationStepTwo> createState() => _JobApplicationStepTwoState();
 }

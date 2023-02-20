@@ -10,8 +10,9 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class JobApplicationStepOne extends StatefulWidget {
-  JobApplicationStepOne({super.key});
+  JobApplicationStepOne({super.key, required this.OnNext});
 
+  final Function OnNext;
   TextEditingController UsernameController = TextEditingController();
   TextEditingController EmailController = TextEditingController();
   TextEditingController PickerController = TextEditingController();
@@ -177,8 +178,10 @@ class _JobApplicationStepOneState extends State<JobApplicationStepOne> {
                 child: PrimaryButton(
                     buttonText: 'Next',
                     OnPrimaryButtonPressed: () {
+                      widget.OnNext();
                       Navigator.pushNamed(
-                          context, pages.Job_Application_Step_Two);
+                          context, pages.Job_Application_Step_Two,
+                          arguments: widget.OnNext);
                     }),
               ),
             ],

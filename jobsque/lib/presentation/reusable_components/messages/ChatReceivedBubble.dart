@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ChatReceivedBubble extends StatelessWidget {
-  const ChatReceivedBubble({super.key, required this.TextMessage});
+  const ChatReceivedBubble(
+      {super.key, required this.TextMessage, required this.Time});
   final String TextMessage;
+  final String Time;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 26),
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 26),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Container(
@@ -21,7 +23,7 @@ class ChatReceivedBubble extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Container(
-                constraints: BoxConstraints(maxWidth: 270),
+                constraints: BoxConstraints(maxWidth: 250),
                 child: Text(
                   TextMessage,
                   style: TextStyle(
@@ -33,7 +35,7 @@ class ChatReceivedBubble extends StatelessWidget {
                 ),
               ),
               Text(
-                '10.18',
+                Time,
                 textAlign: TextAlign.end,
                 style: TextStyle(
                     fontFamily: 'SF Pro Display',
