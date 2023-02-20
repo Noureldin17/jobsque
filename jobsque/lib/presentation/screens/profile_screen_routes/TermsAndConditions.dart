@@ -21,7 +21,11 @@ class TermsAndConditions extends StatelessWidget {
           child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          ProfileBar.noIcon(BarTitle: 'Terms & Conditions'),
+          ProfileBar.noIcon(
+              BarTitle: 'Terms & Conditions',
+              OnBackPressed: () {
+                Navigator.pop(context);
+              }),
           Padding(
             padding: EdgeInsets.only(
                 top: Height(36), left: Width(24), right: Width(24)),

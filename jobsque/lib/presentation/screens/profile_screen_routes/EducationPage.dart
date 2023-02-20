@@ -32,7 +32,11 @@ class _EducationFormPageState extends State<EducationFormPage> {
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(children: [
-            ProfileBar.noIcon(BarTitle: 'Education'),
+            ProfileBar.noIcon(
+                BarTitle: 'Education',
+                OnBackPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(
               padding: EdgeInsets.only(
                   top: Height(32), left: Width(24), right: Width(24)),

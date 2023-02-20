@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 // import 'package:jobsque/constants/pages.dart' as pages;
 // import 'package:jobsque/presentation/screens/CreateAccPage.dart';
 
 class platformButton extends StatelessWidget {
-  final FaIcon? icon;
+  final Image? icon;
   final String? name;
 
   const platformButton({super.key, this.icon, this.name});

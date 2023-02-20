@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
@@ -13,13 +12,7 @@ import '../../reusable_components/profile/ProfileBar.dart';
 
 // ignore: must_be_immutable
 class AppliedStepThree extends StatefulWidget {
-  AppliedStepThree({super.key});
-
-  bool WorkTypeActive = false;
-  bool UploadActive = true;
-
-  bool WorkTypeHighlited = true;
-  bool UploadHighlited = false;
+  const AppliedStepThree({super.key});
 
   @override
   State<AppliedStepThree> createState() => _AppliedStepThreeState();
@@ -50,7 +43,11 @@ class _AppliedStepThreeState extends State<AppliedStepThree> {
                   // constraints: BoxConstraints(maxHeight: 125.h),
                   child: Column(
                     children: [
-                      ProfileBar.noIcon(BarTitle: 'Apply Job'),
+                      ProfileBar.noIcon(
+                          BarTitle: 'Apply Job',
+                          OnBackPressed: () {
+                            Navigator.pop(context);
+                          }),
                       Padding(
                         padding:
                             EdgeInsets.only(left: Width(26), right: Width(26)),
@@ -87,10 +84,7 @@ class _AppliedStepThreeState extends State<AppliedStepThree> {
                             Padding(
                               padding: EdgeInsets.only(top: Height(31)),
                               child: JobApplicationSteps(
-                                UploadActive: widget.UploadActive,
-                                UploadHighlited: widget.UploadHighlited,
-                                WorkTypeActive: widget.WorkTypeActive,
-                                WorkTypeHighlited: widget.WorkTypeHighlited,
+                                stepNumber: 3,
                               ),
                             ),
                             Padding(padding: EdgeInsets.only(top: Height(32))),

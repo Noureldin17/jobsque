@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobsque/data/models/job_listing_model.dart';
 import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:jobsque/presentation/reusable_components/TabsWidget.dart';
 import 'package:jobsque/presentation/views/JobCompanyView.dart';
@@ -10,7 +11,10 @@ import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
 class JobDetailPage extends StatefulWidget {
-  JobDetailPage({super.key});
+  JobDetailPage({super.key, required this.listing});
+
+  // final String ImageAsset;
+  final JobListing listing;
   double Height(double h) {
     return ((h / 812) * 100).h;
   }
@@ -49,9 +53,17 @@ class _JobDetailPageState extends State<JobDetailPage>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(
-                          'assets/icons/arrow-left.svg',
-                        ),
+                        IconButton(
+                            padding: EdgeInsets.all(0),
+                            splashRadius: 20,
+                            constraints:
+                                BoxConstraints(maxHeight: 40, maxWidth: 40),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: SvgPicture.asset(
+                              'assets/icons/arrow-left.svg',
+                            )),
                         Text(
                           'Job Detail',
                           style: TextStyle(
@@ -83,7 +95,7 @@ class _JobDetailPageState extends State<JobDetailPage>
                         Column(
                           children: [
                             SvgPicture.asset(
-                              'assets/icons/TwitterLogo.svg',
+                              widget.listing.imageAsset,
                               width: widget.Width(48),
                               height: widget.Width(48),
                             ),
@@ -91,7 +103,7 @@ class _JobDetailPageState extends State<JobDetailPage>
                                 padding:
                                     EdgeInsets.only(top: widget.Height(12))),
                             Text(
-                              'Senior UI Designer',
+                              widget.listing.title,
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
@@ -102,7 +114,7 @@ class _JobDetailPageState extends State<JobDetailPage>
                                 padding:
                                     EdgeInsets.only(top: widget.Height(4))),
                             Text(
-                              'Twitter • Jakarta, Indonesia ',
+                              '${widget.listing.company} • ${widget.listing.location} ',
                               style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -123,7 +135,7 @@ class _JobDetailPageState extends State<JobDetailPage>
                       Container(
                         child: Center(
                           child: Text(
-                            'Remote',
+                            widget.listing.type,
                             style: TextStyle(
                               fontFamily: 'SF Pro Display',
                               fontWeight: FontWeight.w400,
@@ -142,7 +154,7 @@ class _JobDetailPageState extends State<JobDetailPage>
                       Container(
                         child: Center(
                           child: Text(
-                            'Onsite',
+                            widget.listing.workplace,
                             style: TextStyle(
                               fontFamily: 'SF Pro Display',
                               fontWeight: FontWeight.w400,
@@ -161,7 +173,7 @@ class _JobDetailPageState extends State<JobDetailPage>
                       Container(
                         child: Center(
                           child: Text(
-                            'Senior',
+                            widget.listing.level,
                             style: TextStyle(
                               fontFamily: 'SF Pro Display',
                               fontWeight: FontWeight.w400,

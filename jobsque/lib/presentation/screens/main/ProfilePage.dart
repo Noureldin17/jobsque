@@ -42,7 +42,12 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                       Column(
                         children: [
-                          ProfileBar(),
+                          ProfileBar(
+                            OnBackPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, pages.App_Main_Page);
+                            },
+                          ),
                           Padding(
                             padding: EdgeInsets.only(top: widget.Height(85)),
                             child: Center(

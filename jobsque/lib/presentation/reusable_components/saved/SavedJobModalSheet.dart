@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:jobsque/presentation/reusable_components/ModalSheetButton.dart';
 
 class SavedJobModalSheet extends StatefulWidget {
-  const SavedJobModalSheet({super.key});
-
+  const SavedJobModalSheet({super.key, required this.OnCancelSaved});
+  final Function OnCancelSaved;
   @override
   State<SavedJobModalSheet> createState() => _SavedJobModalSheetState();
 }
@@ -25,12 +25,17 @@ class _SavedJobModalSheetState extends State<SavedJobModalSheet> {
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
-              Text: 'Apply Job', iconAsset: 'assets/icons/directbox-notif.svg'),
+              OnPressed: () {},
+              Text: 'Apply Job',
+              iconAsset: 'assets/icons/directbox-notif.svg'),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
-              Text: 'Share via...', iconAsset: 'assets/export.svg'),
+              OnPressed: () {},
+              Text: 'Share via...',
+              iconAsset: 'assets/export.svg'),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
+            OnPressed: widget.OnCancelSaved,
             Text: 'Cancel save',
             iconAsset: 'assets/icons/navbar_icons/archive-minus.svg',
           ),

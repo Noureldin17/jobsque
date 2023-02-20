@@ -24,7 +24,6 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,7 +36,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                ProfileBar.noIcon(BarTitle: 'Edit Profile'),
+                ProfileBar.noIcon(
+                    BarTitle: 'Edit Profile',
+                    OnBackPressed: () {
+                      Navigator.pop(context);
+                    }),
                 Padding(
                   padding: EdgeInsets.only(top: widget.Height(36)),
                   child: Stack(

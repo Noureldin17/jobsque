@@ -12,12 +12,6 @@ import '../../reusable_components/profile/ProfileBar.dart';
 class JobApplicationStepTwo extends StatefulWidget {
   JobApplicationStepTwo({super.key});
 
-  bool WorkTypeActive = true;
-  bool UploadActive = false;
-
-  bool WorkTypeHighlited = false;
-  bool UploadHighlited = false;
-
   @override
   State<JobApplicationStepTwo> createState() => _JobApplicationStepTwoState();
 }
@@ -47,7 +41,11 @@ class _JobApplicationStepTwoState extends State<JobApplicationStepTwo> {
         backgroundColor: Colors.white,
         body: Column(
           children: [
-            ProfileBar.noIcon(BarTitle: 'Apply Job'),
+            ProfileBar.noIcon(
+                BarTitle: 'Apply Job',
+                OnBackPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(
               padding: EdgeInsets.only(left: Width(26), right: Width(26)),
               child: Column(
@@ -77,10 +75,7 @@ class _JobApplicationStepTwoState extends State<JobApplicationStepTwo> {
                   Padding(
                     padding: EdgeInsets.only(top: Height(31)),
                     child: JobApplicationSteps(
-                      UploadActive: widget.UploadActive,
-                      UploadHighlited: widget.UploadHighlited,
-                      WorkTypeActive: widget.WorkTypeActive,
-                      WorkTypeHighlited: widget.WorkTypeHighlited,
+                      stepNumber: 2,
                     ),
                   ),
                   Padding(padding: EdgeInsets.only(top: Height(32))),

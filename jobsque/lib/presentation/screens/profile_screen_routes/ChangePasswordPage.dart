@@ -33,7 +33,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                 body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ProfileBar.noIcon(BarTitle: 'Change Password'),
+                    ProfileBar.noIcon(
+                        BarTitle: 'Change Password',
+                        OnBackPressed: () {
+                          Navigator.pop(context);
+                        }),
                     Padding(
                       padding: EdgeInsets.only(
                           top: widget.Height(44),

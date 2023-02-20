@@ -5,29 +5,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 class JobApplicationSteps extends StatelessWidget {
   const JobApplicationSteps({
     super.key,
-    required this.UploadActive,
-    required this.WorkTypeActive,
-    required this.UploadHighlited,
-    required this.WorkTypeHighlited,
+    required this.stepNumber,
   })  : circleHeight = 44,
         circleWidth = 44;
   const JobApplicationSteps.small({
     super.key,
-    required this.UploadActive,
-    required this.WorkTypeActive,
-    required this.UploadHighlited,
-    required this.WorkTypeHighlited,
+    required this.stepNumber,
   })  : circleHeight = 24,
         circleWidth = 24;
 
   final double circleWidth;
   final double circleHeight;
 
-  final bool WorkTypeActive;
-  final bool UploadActive;
-
-  final bool WorkTypeHighlited;
-  final bool UploadHighlited;
+  final int stepNumber;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +48,7 @@ class JobApplicationSteps extends StatelessWidget {
           padding: EdgeInsets.only(left: 20, right: 20),
           child: SvgPicture.asset(
             'assets/job_app_steps/Line.svg',
-            color: WorkTypeActive || WorkTypeHighlited
+            color: stepNumber > 1
                 ? Color.fromARGB(255, 51, 102, 255)
                 : Color.fromARGB(255, 209, 213, 219),
             fit: BoxFit.scaleDown,
@@ -67,14 +57,14 @@ class JobApplicationSteps extends StatelessWidget {
         Container(
           child: Column(
             children: [
-              WorkTypeHighlited
+              stepNumber >= 2
                   ? SvgPicture.asset(
                       'assets/job_app_steps/tick-circle.svg',
                       width: circleWidth,
                       height: circleHeight,
                       fit: BoxFit.scaleDown,
                     )
-                  : WorkTypeActive
+                  : stepNumber == 2
                       ? SvgPicture.asset(
                           'assets/job_app_steps/step2.svg',
                           width: circleWidth,
@@ -95,7 +85,7 @@ class JobApplicationSteps extends StatelessWidget {
                     fontFamily: 'SF Pro Display',
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
-                    color: UploadActive & WorkTypeHighlited
+                    color: stepNumber >= 2
                         ? Color.fromARGB(255, 51, 102, 255)
                         : Color.fromARGB(255, 17, 24, 39)),
               ),
@@ -107,7 +97,7 @@ class JobApplicationSteps extends StatelessWidget {
             padding: EdgeInsets.only(left: 20, right: 20),
             child: SvgPicture.asset(
               'assets/job_app_steps/Line.svg',
-              color: UploadActive & WorkTypeHighlited
+              color: stepNumber > 2
                   ? Color.fromARGB(255, 51, 102, 255)
                   : Color.fromARGB(255, 209, 213, 219),
               fit: BoxFit.scaleDown,
@@ -117,14 +107,14 @@ class JobApplicationSteps extends StatelessWidget {
         Container(
           child: Column(
             children: [
-              UploadHighlited & WorkTypeHighlited
+              stepNumber > 3
                   ? SvgPicture.asset(
                       'assets/job_app_steps/tick-circle.svg',
                       width: circleWidth,
                       height: circleHeight,
                       fit: BoxFit.scaleDown,
                     )
-                  : UploadActive & WorkTypeHighlited
+                  : stepNumber == 3
                       ? SvgPicture.asset(
                           'assets/job_app_steps/step3.svg',
                           color: Color.fromARGB(255, 51, 102, 255),
@@ -145,7 +135,7 @@ class JobApplicationSteps extends StatelessWidget {
                     fontFamily: 'SF Pro Display',
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
-                    color: UploadActive & WorkTypeHighlited
+                    color: stepNumber >= 3
                         ? Color.fromARGB(255, 51, 102, 255)
                         : Color.fromARGB(255, 17, 24, 39)),
               ),

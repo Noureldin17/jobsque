@@ -36,7 +36,11 @@ class _EditProfilePageState extends State<PersonalDetailsPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                ProfileBar.noIcon(BarTitle: 'Personal Details'),
+                ProfileBar.noIcon(
+                    BarTitle: 'Personal Details',
+                    OnBackPressed: () {
+                      Navigator.pop(context);
+                    }),
                 Padding(
                   padding: EdgeInsets.only(top: widget.Height(36)),
                   child: Stack(

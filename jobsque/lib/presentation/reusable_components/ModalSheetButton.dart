@@ -4,14 +4,19 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ModalSheetButton extends StatefulWidget {
   const ModalSheetButton(
-      {super.key, required this.Text, required this.iconAsset})
+      {super.key,
+      required this.Text,
+      required this.iconAsset,
+      required this.OnPressed})
       : hasIcon = true;
-  const ModalSheetButton.NoIcon({super.key, required this.Text})
+  const ModalSheetButton.NoIcon(
+      {super.key, required this.Text, required this.OnPressed})
       : iconAsset = '',
         hasIcon = false;
   final bool hasIcon;
   final String iconAsset;
   final String Text;
+  final Function OnPressed;
   @override
   State<ModalSheetButton> createState() => _ModalSheetButtonState();
 }
@@ -28,7 +33,9 @@ class _ModalSheetButtonState extends State<ModalSheetButton> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      onPressed: () {},
+      onPressed: () {
+        widget.OnPressed();
+      },
       child: Padding(
         padding: const EdgeInsets.all(14),
         child: Row(

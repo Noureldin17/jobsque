@@ -39,8 +39,10 @@ class _LanguageSettingState extends State<LanguageSetting> {
         body: Column(
           children: [
             ProfileBar.noIcon(
-              BarTitle: 'Language',
-            ),
+                BarTitle: 'Language',
+                OnBackPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(padding: EdgeInsets.only(top: widget.Height(28))),
             Expanded(
                 child: ListView.builder(

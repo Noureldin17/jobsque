@@ -28,7 +28,11 @@ class _NotificationsSettingsState extends State<NotificationsSettings> {
             backgroundColor: Colors.white,
             body: Column(
               children: [
-                ProfileBar.noIcon(BarTitle: 'Notification'),
+                ProfileBar.noIcon(
+                    BarTitle: 'Notification',
+                    OnBackPressed: () {
+                      Navigator.pop(context);
+                    }),
                 Padding(padding: EdgeInsets.only(top: widget.Height(32))),
                 ListDivider.left(divText: 'Job Notifications'),
                 Padding(padding: EdgeInsets.only(top: widget.Height(12))),

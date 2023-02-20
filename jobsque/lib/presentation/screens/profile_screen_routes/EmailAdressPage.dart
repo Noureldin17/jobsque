@@ -30,7 +30,11 @@ class _EmailAddressPageState extends State<EmailAddressPage> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ProfileBar.noIcon(BarTitle: 'Email Address'),
+              ProfileBar.noIcon(
+                  BarTitle: 'Email Address',
+                  OnBackPressed: () {
+                    Navigator.pop(context);
+                  }),
               Padding(
                 padding: EdgeInsets.only(
                     top: widget.Height(44),

@@ -5,12 +5,31 @@ import 'package:jobsque/constants/pages.dart' as pages;
 
 // ignore: must_be_immutable
 class RecentJobItem extends StatefulWidget {
-  RecentJobItem({super.key});
+  RecentJobItem({
+    super.key,
+    required this.imageAsset,
+    required this.title,
+    required this.level,
+    required this.type,
+    required this.workplace,
+    required this.company,
+    required this.location,
+    required this.monthlySalary,
+  });
 
   bool ItemSaved = false;
   String? activeSaveIconAsset =
       'assets/icons/navbar_icons/archive-minusactive.svg';
   String? saveIconAsset = 'assets/icons/navbar_icons/archive-minus.svg';
+
+  final String imageAsset;
+  final String title;
+  final String level;
+  final String type;
+  final String workplace;
+  final String company;
+  final String location;
+  final int monthlySalary;
 
   double? Height(double h) {
     return ((h / 756) * 100).h;

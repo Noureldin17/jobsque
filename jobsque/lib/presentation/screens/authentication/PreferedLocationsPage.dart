@@ -104,9 +104,9 @@ class _PreferedLocationsState extends State<PreferedLocations>
                       ],
                     ),
                   ),
+                  Spacer(),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        0, widget.Height(53)!, 0, widget.Height(20)!),
+                    padding: EdgeInsets.only(bottom: widget.Height(20)!),
                     child: PrimaryButton(
                         buttonText: "Next",
                         OnPrimaryButtonPressed: () {

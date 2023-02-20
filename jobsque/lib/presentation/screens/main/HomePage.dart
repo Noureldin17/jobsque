@@ -1,14 +1,21 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
+import 'package:jobsque/business_logic/cubit/job_listings_cubit.dart';
+import 'package:jobsque/data/models/job_listing_model.dart';
+import 'package:jobsque/presentation/reusable_components/home/JobListingItem.dart';
+// import 'package:jobsque/presentation/reusable_components/home/RecentJobItem.dart';
 import 'package:jobsque/presentation/reusable_components/home/homeNotificationBanner.dart';
 import 'package:jobsque/presentation/reusable_components/home/homePageNameBanner.dart';
 import 'package:jobsque/presentation/reusable_components/home/jobCard.dart';
-import 'package:jobsque/presentation/reusable_components/home/recentJobItem.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../reusable_components/search/AppSearchBar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
+  JobListingsCubit? cubit;
+
   double Height(double h) {
     return ((h / 756) * 100).h;
   }
@@ -22,6 +29,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<JobListing> JobList = [];
+  @override
+  void initState() {
+    widget.cubit = JobListingsCubit.get(context);
+    JobList = widget.cubit!.JobsList;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -126,9 +141,27 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                       ),
-                      RecentJobItem(),
-                      RecentJobItem(),
-                      RecentJobItem()
+
+                      ...JobList.map((e) => JobListingItem(
+                            key: UniqueKey(),
+                            listing: e,
+                          ))
+                      // Expanded(
+                      //   child: ListView.builder(
+                      //     itemCount: JobList.length,
+                      //     itemBuilder: (context, index) {
+                      //       return JobListingItem(
+                      //           imageAsset: JobList[index].imageAsset,
+                      //           title: JobList[index].title,
+                      //           level: JobList[index].level,
+                      //           type: JobList[index].type,
+                      //           workplace: JobList[index].workplace,
+                      //           company: JobList[index].company,
+                      //           location: JobList[index].location,
+                      //           monthlySalary: JobList[index].monthlySalary);
+                      //     },
+                      //   ),
+                      // )
                     ],
                   )),
             ))));

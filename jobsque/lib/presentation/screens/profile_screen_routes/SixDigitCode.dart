@@ -54,7 +54,11 @@ class _SixDigitCodeState extends State<SixDigitCode> {
               backgroundColor: Colors.white,
               body: Column(
                 children: [
-                  ProfileBar.noIcon(BarTitle: 'Two-Step Verification'),
+                  ProfileBar.noIcon(
+                      BarTitle: 'Two-Step Verification',
+                      OnBackPressed: () {
+                        Navigator.pop(context);
+                      }),
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: Width(24), vertical: Height(36)),

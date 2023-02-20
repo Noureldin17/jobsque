@@ -28,7 +28,11 @@ class _SecuritySettingsState extends State<SecuritySettings> {
         builder: (context, orientation, deviceType) => Scaffold(
           backgroundColor: Colors.white,
           body: Column(children: [
-            ProfileBar.noIcon(BarTitle: 'Login and security'),
+            ProfileBar.noIcon(
+                BarTitle: 'Login and security',
+                OnBackPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(padding: EdgeInsets.only(top: widget.Height(32))),
             ListDivider.left(divText: 'Account access'),
             Padding(padding: EdgeInsets.only(top: widget.Height(12))),

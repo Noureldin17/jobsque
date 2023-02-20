@@ -34,7 +34,11 @@ class _PhoneNumberPageState extends State<PhoneNumberPage> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ProfileBar.noIcon(BarTitle: 'Phone Number'),
+              ProfileBar.noIcon(
+                  BarTitle: 'Phone Number',
+                  OnBackPressed: () {
+                    Navigator.pop(context);
+                  }),
               Padding(
                 padding: EdgeInsets.only(
                     top: widget.Height(44),

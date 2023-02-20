@@ -25,28 +25,35 @@ class _ChatScreenModalSheetState extends State<ChatScreenModalSheet> {
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
+              OnPressed: () {},
               Text: 'Visit job post',
               iconAsset: 'assets/icons/navbar_icons/briefcase.svg'),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
-              Text: 'View my application', iconAsset: 'assets/icons/note.svg'),
+              OnPressed: () {},
+              Text: 'View my application',
+              iconAsset: 'assets/icons/note.svg'),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
+            OnPressed: () {},
             Text: 'Mark as unread',
             iconAsset: 'assets/icons/sms.svg',
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
+            OnPressed: () {},
             Text: 'Mute',
             iconAsset: 'assets/icons/notification.svg',
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
+            OnPressed: () {},
             Text: 'Archive',
             iconAsset: 'assets/icons/import.svg',
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton(
+            OnPressed: () {},
             Text: 'Delete conversation',
             iconAsset: 'assets/icons/trash.svg',
           ),

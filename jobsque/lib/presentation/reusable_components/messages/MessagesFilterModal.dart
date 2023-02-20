@@ -49,16 +49,19 @@ class _MessagesFilterModalState extends State<MessagesFilterModal> {
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton.NoIcon(
+            OnPressed: () {},
             Text: 'Unread',
             // iconAsset: 'assets/icons/directbox-notif.svg'
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton.NoIcon(
+            OnPressed: () {},
             Text: 'Spam',
             // iconAsset: 'assets/export.svg'
           ),
           Padding(padding: EdgeInsets.only(top: 15)),
           ModalSheetButton.NoIcon(
+            OnPressed: () {},
             Text: 'Archived',
             // iconAsset: 'assets/icons/navbar_icons/archive-minus.svg',
           ),

@@ -4,11 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfileBar extends StatelessWidget {
-  const ProfileBar({super.key})
+  const ProfileBar({super.key, required this.OnBackPressed})
       : hasIcon = true,
         BarTitle = 'Profile';
-  const ProfileBar.noIcon({super.key, required this.BarTitle})
+  const ProfileBar.noIcon(
+      {super.key, required this.BarTitle, required this.OnBackPressed})
       : hasIcon = false;
+
+  final Function OnBackPressed;
   double Height(double h) {
     return ((h / 756) * 100).h;
   }
@@ -34,7 +37,9 @@ class ProfileBar extends StatelessWidget {
                 padding: EdgeInsets.all(0),
                 splashRadius: 20,
                 constraints: BoxConstraints(maxHeight: 40, maxWidth: 40),
-                onPressed: () {},
+                onPressed: () {
+                  OnBackPressed();
+                },
                 icon: SvgPicture.asset('assets/icons/arrow-left.svg')),
             Align(
               alignment: Alignment.center,

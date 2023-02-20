@@ -25,7 +25,11 @@ class PrivacyPolicy extends StatelessWidget {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ProfileBar.noIcon(BarTitle: 'Privacy Policy'),
+                          ProfileBar.noIcon(
+                              BarTitle: 'Privacy Policy',
+                              OnBackPressed: () {
+                                Navigator.pop(context);
+                              }),
                           Padding(
                             padding: EdgeInsets.only(
                                 top: Height(36),

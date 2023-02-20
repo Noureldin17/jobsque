@@ -12,12 +12,7 @@ import '../../reusable_components/job_application/JobApplicationSteps.dart';
 import '../../reusable_components/job_application/WorkTypeApplicationItem.dart';
 
 class AppliedStepTwo extends StatefulWidget {
-  AppliedStepTwo({super.key});
-  bool WorkTypeActive = true;
-  bool UploadActive = false;
-
-  bool WorkTypeHighlited = false;
-  bool UploadHighlited = false;
+  const AppliedStepTwo({super.key});
 
   @override
   State<AppliedStepTwo> createState() => _AppliedStepTwoState();
@@ -54,7 +49,11 @@ class _AppliedStepTwoState extends State<AppliedStepTwo> {
                 constraints: BoxConstraints(maxHeight: 125.h),
                 child: Column(
                   children: [
-                    ProfileBar.noIcon(BarTitle: 'Apply Job'),
+                    ProfileBar.noIcon(
+                        BarTitle: 'Apply Job',
+                        OnBackPressed: () {
+                          Navigator.pop(context);
+                        }),
                     Padding(
                       padding:
                           EdgeInsets.only(left: Width(26), right: Width(26)),
@@ -91,10 +90,7 @@ class _AppliedStepTwoState extends State<AppliedStepTwo> {
                           Padding(
                             padding: EdgeInsets.only(top: Height(31)),
                             child: JobApplicationSteps(
-                              UploadActive: widget.UploadActive,
-                              UploadHighlited: widget.UploadHighlited,
-                              WorkTypeActive: widget.WorkTypeActive,
-                              WorkTypeHighlited: widget.WorkTypeHighlited,
+                              stepNumber: 2,
                             ),
                           ),
                           Padding(padding: EdgeInsets.only(top: Height(32))),

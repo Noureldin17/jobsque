@@ -32,7 +32,11 @@ class _TwoStepVerificationState extends State<TwoStepVerification> {
           child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(children: [
-          ProfileBar.noIcon(BarTitle: 'Two-Step Verification'),
+          ProfileBar.noIcon(
+              BarTitle: 'Two-Step Verification',
+              OnBackPressed: () {
+                Navigator.pop(context);
+              }),
           Padding(
             padding: EdgeInsets.only(top: widget.Height(36)),
             child: Container(

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jobsque/presentation/reusable_components/authentication/AuthBottomButtons.dart';
 import 'package:jobsque/presentation/reusable_components/authentication/AuthTextField.dart';
-import 'package:jobsque/presentation/reusable_components/authentication/PlatformAuthBtn.dart';
-import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
+
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
 // import 'package:google_fonts/google_fonts.dart';
@@ -21,11 +20,11 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   bool? checkboxValue;
   final _unfocusNode = FocusNode();
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  double? _calculateHeight(double h) {
+  double Height(double h) {
     return ((h / 812) * 100).h;
   }
 
-  double? _calculateWidth(double w) {
+  double Width(double w) {
     return ((w / 375) * 100).w;
   }
 
@@ -67,8 +66,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 0, 3.94.h, 6.4.w, 0),
                             child: SvgPicture.asset(
                               'assets/Logo.svg',
-                              width: _calculateWidth(81),
-                              height: _calculateHeight(19),
+                              width: Width(81),
+                              height: Height(19),
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -115,10 +114,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                _calculateWidth(24)!,
-                                _calculateWidth(47)!,
-                                _calculateWidth(24)!,
-                                0),
+                                Width(24), Width(47), Width(24), 0),
                             child: Container(
                               width: 87.2.w,
                               decoration: const BoxDecoration(
@@ -158,14 +154,14 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0, _calculateHeight(5)!, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0, Height(5), 0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateWidth(14)!, 0, 0, 0),
+                                  Width(14), 0, 0, 0),
                               child: Theme(
                                 data: ThemeData(
                                   checkboxTheme: CheckboxThemeData(
@@ -193,10 +189,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateWidth(90)!,
-                                  0,
-                                  _calculateWidth(24)!,
-                                  0),
+                                  Width(90), 0, Width(24), 0),
                               child: Text(
                                 'Forgot Password?',
                                 style: TextStyle(
@@ -209,144 +202,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0, _calculateHeight(170)!, 0, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateWidth(84)!, 0, 0, 0),
-                              child: Text(
-                                'Don\'t have an account?',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 156, 163, 175),
-                                  fontFamily: 'SF Pro Display',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateHeight(7)!, 0, 0, 0),
-                              child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, pages.Create_Account);
-                                  },
-                                  child: Text(
-                                    'Register',
-                                    style: TextStyle(
-                                      fontFamily: 'SF Pro Display',
-                                      color: Color(0xFF3366FF),
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  )),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0, _calculateHeight(24)!, 0, 0),
-                          child: PrimaryButton(
-                            OnPrimaryButtonPressed: () {
-                              Navigator.pushReplacementNamed(
-                                  context, pages.App_Main_Page);
-                            },
-                            buttonText: "Login",
-                          )),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0, _calculateHeight(20)!, 0, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateWidth(24)!,
-                                  _calculateHeight(2)!,
-                                  0,
-                                  0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  SizedBox(
-                                    width: _calculateWidth(70),
-                                    child: Divider(
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    _calculateWidth(22)!, 0, 0, 0),
-                                child: Text(
-                                  'Or Login With Account',
-                                  style: TextStyle(
-                                    fontFamily: 'SF Pro Display',
-                                    color: Color(0xFF6B7280),
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                )),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateWidth(22)!,
-                                  0,
-                                  _calculateWidth(24)!,
-                                  0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  SizedBox(
-                                    width: _calculateWidth(70)!,
-                                    child: Divider(
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            _calculateWidth(24)!,
-                            _calculateHeight(24)!,
-                            _calculateWidth(24)!,
-                            0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  _calculateWidth(0)!, 0, 0, 0),
-                              child: platformButton(
-                                icon: FaIcon(
-                                  FontAwesomeIcons.google,
-                                  size: 18,
-                                ),
-                                name: "Google",
-                              ),
-                            ),
-                            Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    _calculateWidth(0)!,
-                                    0,
-                                    _calculateWidth(0)!,
-                                    0),
-                                child: platformButton(
-                                  icon: FaIcon(
-                                    FontAwesomeIcons.facebook,
-                                    size: 18,
-                                  ),
-                                  name: "Facebook",
-                                )),
-                          ],
+                        padding: EdgeInsets.only(
+                            top: Height(171), bottom: Height(27)),
+                        child: AuthBottomButtons(
+                          ButtonText: "Login",
+                          DividerText: 'Or Login With Account',
+                          LabelText: 'Dont’t have an account?',
+                          LoginRegister: "Register",
+                          OnButtonPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, pages.App_Main_Page);
+                          },
+                          OnTextPressed: () {
+                            Navigator.pushNamed(context, pages.Create_Account);
+                          },
                         ),
                       ),
                     ],

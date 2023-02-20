@@ -60,17 +60,15 @@ class _NotificationBannerState extends State<NotificationBanner> {
                   Padding(padding: EdgeInsets.only(top: widget.Height(4))),
                   Container(
                     width: widget.Width(165),
-                    child: Flexible(
-                      child: Text(
-                        widget.accepted
-                            ? 'You have been accepted for the selection interview'
-                            : 'Waiting to be selected by the twitter team',
-                        style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromARGB(255, 55, 65, 81)),
-                      ),
+                    child: Text(
+                      widget.accepted
+                          ? 'You have been accepted for the selection interview'
+                          : 'Waiting to be selected by the twitter team',
+                      style: TextStyle(
+                          fontFamily: 'SF Pro Display',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Color.fromARGB(255, 55, 65, 81)),
                     ),
                   ),
                 ],

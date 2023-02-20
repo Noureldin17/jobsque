@@ -82,18 +82,16 @@ class _MessagesListItemState extends State<MessagesListItem> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: widget.Height(8)),
-                        child: Flexible(
-                          child: Text(
-                            'Posted new design jobs',
-                            style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12,
-                              color: Color.fromARGB(255, 55, 65, 81),
-                            ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
+                        child: Text(
+                          'Posted new design jobs',
+                          style: TextStyle(
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: Color.fromARGB(255, 55, 65, 81),
                           ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
                       )
                     ],

@@ -6,6 +6,7 @@ import 'package:jobsque/presentation/reusable_components/messages/MessagesFilter
 import 'package:jobsque/presentation/reusable_components/messages/MessagesListItem.dart';
 import 'package:jobsque/presentation/reusable_components/search/AppSearchBar.dart';
 import 'package:sizer/sizer.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 // ignore: must_be_immutable
 class MessagesPage extends StatefulWidget {
@@ -47,7 +48,10 @@ class _HomePageState extends State<MessagesPage> {
                             splashRadius: 20,
                             constraints:
                                 BoxConstraints(maxHeight: 40, maxWidth: 40),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, pages.App_Main_Page);
+                            },
                             icon: SvgPicture.asset(
                                 'assets/icons/arrow-left.svg')),
                         Padding(

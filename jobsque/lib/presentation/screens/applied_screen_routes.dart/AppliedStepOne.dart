@@ -10,13 +10,9 @@ import '../../reusable_components/PrimaryButton.dart';
 import '../../reusable_components/authentication/AuthTextField.dart';
 import '../../reusable_components/job_application/JobApplicationSteps.dart';
 
+// ignore: must_be_immutable
 class AppliedStepOne extends StatefulWidget {
   AppliedStepOne({super.key});
-  bool WorkTypeActive = false;
-  bool UploadActive = false;
-
-  bool WorkTypeHighlited = false;
-  bool UploadHighlited = false;
 
   TextEditingController UsernameController = TextEditingController();
   TextEditingController EmailController = TextEditingController();
@@ -48,7 +44,11 @@ class _AppliedStepOneState extends State<AppliedStepOne> {
               constraints: BoxConstraints(maxHeight: 100.h),
               child: Column(
                 children: [
-                  ProfileBar.noIcon(BarTitle: 'Apply Job'),
+                  ProfileBar.noIcon(
+                      BarTitle: 'Apply Job',
+                      OnBackPressed: () {
+                        Navigator.pop(context);
+                      }),
                   Padding(
                     padding: EdgeInsets.only(left: Width(26), right: Width(26)),
                     child: Column(
@@ -84,10 +84,7 @@ class _AppliedStepOneState extends State<AppliedStepOne> {
                         Padding(
                           padding: EdgeInsets.only(top: Height(31)),
                           child: JobApplicationSteps(
-                            UploadActive: widget.UploadActive,
-                            UploadHighlited: widget.UploadHighlited,
-                            WorkTypeActive: widget.WorkTypeActive,
-                            WorkTypeHighlited: widget.WorkTypeHighlited,
+                            stepNumber: 1,
                           ),
                         ),
                         Padding(padding: EdgeInsets.only(top: Height(32))),

@@ -161,11 +161,7 @@ class _AppliedJobsItemState extends State<AppliedJobsItem> {
                       width: 1, color: Color.fromARGB(255, 209, 213, 219))),
               constraints:
                   BoxConstraints(maxWidth: Width(327), maxHeight: Height(75)),
-              child: JobApplicationSteps.small(
-                  UploadActive: false,
-                  WorkTypeActive: true,
-                  UploadHighlited: false,
-                  WorkTypeHighlited: false),
+              child: JobApplicationSteps.small(stepNumber: 2),
             ),
             Padding(padding: EdgeInsets.only(top: Height(12))),
             Divider(

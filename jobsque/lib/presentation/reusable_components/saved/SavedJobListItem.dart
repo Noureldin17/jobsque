@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobsque/data/models/job_listing_model.dart';
 import 'package:jobsque/presentation/reusable_components/saved/SavedJobModalSheet.dart';
 import 'package:sizer/sizer.dart';
 
 class SavedListItem extends StatefulWidget {
-  const SavedListItem({super.key});
+  const SavedListItem(
+      {super.key, required this.listing, required this.OnCancelSave});
+
+  final JobListing listing;
+  final Function OnCancelSave;
+
   double? Height(double h) {
     return ((h / 756) * 100).h;
   }
@@ -31,7 +37,7 @@ class _SavedListItemState extends State<SavedListItem> {
             Row(
               children: [
                 SvgPicture.asset(
-                  'assets/icons/TwitterLogo.svg',
+                  widget.listing.imageAsset,
                   height: widget.Height(40),
                   width: widget.Width(40),
                 ),
@@ -44,7 +50,7 @@ class _SavedListItemState extends State<SavedListItem> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                       Text(
-                        'Senior UI Designer',
+                        widget.listing.title,
                         style: TextStyle(
                           fontFamily: 'SF Pro Display',
                           fontWeight: FontWeight.w500,
@@ -56,7 +62,7 @@ class _SavedListItemState extends State<SavedListItem> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0, widget.Height(4)!, 0, 0)),
                       Text(
-                        'Twitter • Jakarta, Indonesia ',
+                        '${widget.listing.company} • ${widget.listing.location} ',
                         style: TextStyle(
                           fontFamily: 'SF Pro Display',
                           fontWeight: FontWeight.w500,
@@ -76,7 +82,10 @@ class _SavedListItemState extends State<SavedListItem> {
                         )),
                         context: context,
                         builder: (context) {
-                          return SavedJobModalSheet();
+                          return SavedJobModalSheet(OnCancelSaved: () {
+                            widget.OnCancelSave();
+                            Navigator.pop(context);
+                          });
                         },
                       );
                     },

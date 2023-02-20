@@ -35,7 +35,11 @@ class _PhoneNumberVerificationState extends State<PhoneNumberVerification> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProfileBar.noIcon(BarTitle: 'Two-Step Verification'),
+            ProfileBar.noIcon(
+                BarTitle: 'Two-Step Verification',
+                OnBackPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: Width(24), vertical: Height(36)),

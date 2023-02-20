@@ -6,6 +6,7 @@ import 'package:jobsque/presentation/reusable_components/profile/ProfileBar.dart
 import 'package:jobsque/presentation/views/AppliedJobsRejectedView.dart';
 import 'package:jobsque/presentation/views/AppliedJobsView.dart';
 import 'package:sizer/sizer.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 class AppliedPage extends StatefulWidget {
   AppliedPage({super.key});
@@ -37,7 +38,12 @@ class _HomePageState extends State<AppliedPage> with TickerProviderStateMixin {
                 backgroundColor: Colors.white,
                 body: Column(
                   children: [
-                    ProfileBar.noIcon(BarTitle: 'Applied Job'),
+                    ProfileBar.noIcon(
+                        BarTitle: 'Applied Job',
+                        OnBackPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, pages.App_Main_Page);
+                        }),
                     Padding(
                       padding:
                           EdgeInsets.only(top: Height(35), bottom: Height(27)),

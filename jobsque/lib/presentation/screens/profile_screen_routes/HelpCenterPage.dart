@@ -31,7 +31,11 @@ class _HelpCenterPageState extends State<HelpCenterPage> {
                   onTap: () => FocusScope.of(context).unfocus(),
                   child: SingleChildScrollView(
                     child: Column(children: [
-                      ProfileBar.noIcon(BarTitle: 'Help Center'),
+                      ProfileBar.noIcon(
+                          BarTitle: 'Help Center',
+                          OnBackPressed: () {
+                            Navigator.pop(context);
+                          }),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                           Width(24),

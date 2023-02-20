@@ -32,7 +32,11 @@ class _ApplicationSubmittedPageState extends State<ApplicationSubmittedPage> {
           backgroundColor: Colors.white,
           body: Column(
             children: [
-              ProfileBar.noIcon(BarTitle: 'Apply Job'),
+              ProfileBar.noIcon(
+                  BarTitle: 'Apply Job',
+                  OnBackPressed: () {
+                    Navigator.pop(context);
+                  }),
               Padding(
                 padding: EdgeInsets.only(left: Width(26), right: Width(26)),
                 child: Column(children: [

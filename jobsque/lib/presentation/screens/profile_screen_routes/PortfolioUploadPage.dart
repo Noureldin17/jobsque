@@ -30,8 +30,10 @@ class _PortfolioUploadPageState extends State<PortfolioUploadPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ProfileBar.noIcon(
-                        BarTitle: 'Portfolio',
-                      ),
+                          BarTitle: 'Portfolio',
+                          OnBackPressed: () {
+                            Navigator.pop(context);
+                          }),
                       Padding(
                         padding: EdgeInsets.only(
                             left: widget.Width(24),

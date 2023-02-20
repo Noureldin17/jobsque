@@ -29,7 +29,11 @@ class _ProfileCompletionPageState extends State<ProfileCompletionPage> {
           child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(children: [
-          ProfileBar.noIcon(BarTitle: 'Complete Profile'),
+          ProfileBar.noIcon(
+              BarTitle: 'Complete Profile',
+              OnBackPressed: () {
+                Navigator.pop(context);
+              }),
           Padding(padding: EdgeInsets.only(top: Height(33))),
           CircularPercentIndicator(
             animation: true,
