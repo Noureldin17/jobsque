@@ -40,6 +40,8 @@ dependencies:
   sticky_headers: "^0.3.0"
   badges: ^3.0.2
   pinput: ^2.2.8
+  image_picker: ^0.8.6
+  xfile: ^1.1.0
   percent_indicator: ^4.2.2
   
 

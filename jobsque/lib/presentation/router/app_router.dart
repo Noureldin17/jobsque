@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsque/business_logic/cubit/job_listings_cubit.dart';
 import 'package:jobsque/business_logic/cubit/messages_cubit.dart';
 import 'package:jobsque/data/models/argument_models/job_detail_arguments.dart';
-import 'package:jobsque/data/models/job_listing_model.dart';
 import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepOne.dart';
 import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepThree.dart';
 import 'package:jobsque/presentation/screens/applied_screen_routes.dart/AppliedStepTwo.dart';

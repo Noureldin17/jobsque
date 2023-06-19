@@ -1,11 +1,15 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:jobsque/presentation/reusable_components/ModalSheetButton.dart';
 import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:jobsque/presentation/reusable_components/job_application/CountryPickerFormField.dart';
 import 'package:jobsque/presentation/reusable_components/profile/ProfileBar.dart';
 import 'package:jobsque/presentation/reusable_components/profile/ProfileTextField.dart';
 import 'package:sizer/sizer.dart';
+// import 'package:xfile/xfile.dart';
 
 class EditProfilePage extends StatefulWidget {
   EditProfilePage({super.key});
@@ -24,6 +28,25 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
+  XFile? ImageFile;
+  Future ImagePickerGallery() async {
+    final UploadedFile =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (UploadedFile == null) return;
+    setState(() {
+      ImageFile = UploadedFile;
+    });
+  }
+
+  Future ImagePickerCamera() async {
+    final UploadedFile =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+    if (UploadedFile == null) return;
+    setState(() {
+      ImageFile = UploadedFile;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,15 +76,51 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               Color.fromARGB(102, 0, 0, 0), BlendMode.darken),
                           child: CircleAvatar(
                             radius: 45,
-                            backgroundImage: AssetImage(
-                              'assets/ProfilePic.png',
-                            ),
+                            backgroundImage: ImageFile == null
+                                ? AssetImage(
+                                    'assets/ProfilePic.png',
+                                  )
+                                : AssetImage(ImageFile!.path),
                           ),
                         ),
                       ),
                       IconButton(
                           splashRadius: 20,
-                          onPressed: () {},
+                          onPressed: () {
+                            showModalBottomSheet(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(22),
+                                      topRight: Radius.circular(22))),
+                              context: context,
+                              builder: (context) {
+                                return Container(
+                                  padding: EdgeInsets.only(top: 40, bottom: 40),
+                                  height: 200,
+                                  width: 100.w,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(22),
+                                          topRight: Radius.circular(22)),
+                                      color: Colors.white),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      ModalSheetButton(
+                                          Text: 'Take A Photo',
+                                          iconAsset: 'assets/icons/camera.svg',
+                                          OnPressed: ImagePickerCamera),
+                                      ModalSheetButton(
+                                          Text: 'Choose From Gallery',
+                                          iconAsset: 'assets/icons/gallery.svg',
+                                          OnPressed: ImagePickerGallery),
+                                    ],
+                                  ),
+                                );
+                              },
+                            );
+                          },
                           icon: SvgPicture.asset('assets/icons/camera.svg')),
                     ],
                   ),
