@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobsque/business_logic/cubit/job_listings_cubit.dart';
 import 'package:jobsque/data/local/my_cache.dart';
 import 'package:jobsque/presentation/router/app_router.dart';
 // import 'package:jobsque/presentation/screens/LoginPage.dart';
@@ -15,10 +17,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: router.onGenerateRoute,
-    );
+    return BlocProvider(
+        create: (context) => JobListingsCubit(),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: router.onGenerateRoute,
+        ));
   }
 }
 

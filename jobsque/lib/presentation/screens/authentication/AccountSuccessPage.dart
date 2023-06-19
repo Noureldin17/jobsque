@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
 import 'package:sizer/sizer.dart';
+import 'package:jobsque/constants/pages.dart' as pages;
 
 class AccountSuccess extends StatelessWidget {
   const AccountSuccess({super.key});
-  double? Height(double h) {
+  double Height(double h) {
     return ((h / 812) * 100).h;
   }
 
-  double? Width(double w) {
+  double Width(double w) {
     return ((w / 375) * 100).w;
   }
 
@@ -23,20 +24,25 @@ class AccountSuccess extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(24)!, Height(24)!, 0, 0),
+                        Width(24), Height(24), 0, 0),
                     child: Row(
                       children: [
-                        SvgPicture.asset(
-                          'assets/icons/arrow-left.svg',
-                          fit: BoxFit.scaleDown,
-                          color: Color.fromARGB(255, 41, 45, 50),
-                        ),
+                        IconButton(
+                            padding: EdgeInsets.all(0),
+                            splashRadius: 20,
+                            constraints:
+                                BoxConstraints(maxHeight: 40, maxWidth: 40),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            icon: SvgPicture.asset(
+                                'assets/icons/arrow-left.svg')),
                       ],
                     ),
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(101)!, Height(109)!, Width(101)!, 0),
+                        Width(101), Height(109), Width(101), 0),
                     child: Image.asset(
                       'assets/accsuccess.png',
                       width: Width(173),
@@ -45,7 +51,7 @@ class AccountSuccess extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(25)!, Height(24)!, Width(25)!, 0),
+                        Width(25), Height(24), Width(25), 0),
                     child: Text(
                       'Your account has been set up!',
                       style: TextStyle(
@@ -57,7 +63,7 @@ class AccountSuccess extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(25)!, Height(8)!, Width(25)!, 0),
+                        Width(25), Height(8), Width(25), 0),
                     child: Text(
                       'We have customized feeds according to your preferences',
                       textAlign: TextAlign.center,
@@ -68,19 +74,18 @@ class AccountSuccess extends StatelessWidget {
                           fontWeight: FontWeight.w400),
                     ),
                   ),
+                  Spacer(),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(24)!, Height(322)!, Width(24)!, 0),
+                    padding: EdgeInsetsDirectional.only(bottom: Height(20)),
                     child: Container(
                       child: PrimaryButton(
                           buttonText: 'Get Started',
-                          OnPrimaryButtonPressed: () {}),
+                          OnPrimaryButtonPressed: () {
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, pages.App_Main_Page, (route) => false);
+                          }),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        Width(24)!, Height(0)!, Width(24)!, Height(20)!),
-                  )
                 ],
               ),
             )));

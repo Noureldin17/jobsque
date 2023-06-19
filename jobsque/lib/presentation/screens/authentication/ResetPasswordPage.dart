@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
-import '../../reusable_components/authTextField.dart';
-import '../../reusable_components/primaryButton.dart';
+import '../../reusable_components/authentication/AuthTextField.dart';
+import '../../reusable_components/PrimaryButton.dart';
 
 class ResetPassword extends StatefulWidget {
   ResetPassword({super.key});
@@ -125,7 +125,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     child: PrimaryButton(
                         buttonText: "Request Password Reset",
                         OnPrimaryButtonPressed: () {
-                          Navigator.pushNamed(context, pages.emailCheckScreen);
+                          Navigator.pushNamed(context, pages.Email_Check);
                         }),
                   ),
                   // Padding(

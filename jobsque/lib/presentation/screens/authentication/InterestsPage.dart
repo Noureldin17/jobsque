@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:jobsque/presentation/reusable_components/interestsCard.dart';
-import 'package:jobsque/presentation/reusable_components/primaryButton.dart';
+import 'package:jobsque/presentation/reusable_components/getting_started/InterestsCard.dart';
+import 'package:jobsque/presentation/reusable_components/PrimaryButton.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/interests_items.dart' as interestslist;
 import '../../../constants/interests_items.dart';
@@ -78,14 +78,8 @@ class _InterestsPageState extends State<InterestsPage> {
                     child: PrimaryButton(
                         buttonText: "Next",
                         OnPrimaryButtonPressed: () {
-                          Navigator.pushNamed(context, pages.locationsScreen);
+                          Navigator.pushNamed(context, pages.Locations_Select);
                         }),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        0, 0, 0, widget.Height(20)!),
-                    child: PrimaryButton(
-                        buttonText: "Next", OnPrimaryButtonPressed: () {}),
                   ),
                 ],
               )),

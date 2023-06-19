@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:jobsque/presentation/reusable_components/countrySelection.dart';
+import 'package:jobsque/presentation/reusable_components/getting_started/CountrySelection.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/countries.dart' as countries;
-import '../../reusable_components/primaryButton.dart';
+import '../../reusable_components/PrimaryButton.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
+
+import '../../reusable_components/TabsWidget.dart';
 
 // ignore: must_be_immutable
 class PreferedLocations extends StatefulWidget {
@@ -33,7 +35,8 @@ class PreferedLocations extends StatefulWidget {
   State<PreferedLocations> createState() => _PreferedLocationsState();
 }
 
-class _PreferedLocationsState extends State<PreferedLocations> {
+class _PreferedLocationsState extends State<PreferedLocations>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -65,70 +68,12 @@ class _PreferedLocationsState extends State<PreferedLocations> {
                             fontWeight: FontWeight.normal)),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(widget.Width(27)!,
-                        widget.Height(35)!, widget.Width(27)!, 0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(100),
-                          color: Color.fromARGB(255, 244, 244, 245)),
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                              onTap: () {
-                                if (widget.remotework) {
-                                  setState(() {
-                                    widget.remotework = false;
-                                    widget.workfromoffice = true;
-                                  });
-                                }
-                              },
-                              child: Container(
-                                  decoration: widget.workfromoffice
-                                      ? widget.selectedDecoration
-                                      : widget.unselectedDecoration,
-                                  height: widget.Height(40),
-                                  width: widget.Width(160.5),
-                                  child: Center(
-                                    child: Text('Work From Office',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: widget.workfromoffice
-                                                ? widget.selectedFont
-                                                : widget.unselectedFont,
-                                            fontFamily: 'SF Pro Display',
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500)),
-                                  ))),
-                          GestureDetector(
-                              onTap: () {
-                                if (widget.workfromoffice) {
-                                  setState(() {
-                                    widget.workfromoffice = false;
-                                    widget.remotework = true;
-                                  });
-                                }
-                              },
-                              child: Container(
-                                  decoration: widget.remotework
-                                      ? widget.selectedDecoration
-                                      : widget.unselectedDecoration,
-                                  width: widget.Width(160.5),
-                                  height: widget.Height(40),
-                                  child: Center(
-                                    child: Text('Remote Work',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: widget.remotework
-                                                ? widget.selectedFont
-                                                : widget.unselectedFont,
-                                            fontFamily: 'SF Pro Display',
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500)),
-                                  )))
-                        ],
-                      ),
-                    ),
-                  ),
+                      padding: EdgeInsetsDirectional.fromSTEB(widget.Width(20)!,
+                          widget.Height(35)!, widget.Width(20)!, 0),
+                      child: TabsWidget(tabs: [
+                        Tab(text: 'Work From Office'),
+                        Tab(text: 'Remote Work')
+                      ], tabController: TabController(length: 2, vsync: this))),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(
                         widget.Width(24)!,
@@ -159,13 +104,13 @@ class _PreferedLocationsState extends State<PreferedLocations> {
                       ],
                     ),
                   ),
+                  Spacer(),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(
-                        0, widget.Height(63)!, 0, widget.Height(20)!),
+                    padding: EdgeInsets.only(bottom: widget.Height(20)!),
                     child: PrimaryButton(
                         buttonText: "Next",
                         OnPrimaryButtonPressed: () {
-                          Navigator.pushNamed(context, pages.accSuccessScreen);
+                          Navigator.pushNamed(context, pages.Account_Success);
                         }),
                   ),
                 ],

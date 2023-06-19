@@ -32,7 +32,7 @@ class MyCache {
   }
 
   static int getInt({required MyCacheKeys key}) {
-    return preferences?.getInt(key.name) ?? -1;
+    return preferences?.getInt(key.name) ?? 0;
   }
 
   static void putDouble(
@@ -41,7 +41,7 @@ class MyCache {
   }
 
   static double getDouble({required MyCacheKeys key}) {
-    return preferences?.getDouble(key.name) ?? -1;
+    return preferences?.getDouble(key.name) ?? 0;
   }
 
   static Future<void> removeFromShared({required MyCacheKeys key}) async {

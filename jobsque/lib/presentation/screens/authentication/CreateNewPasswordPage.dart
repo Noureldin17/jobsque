@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:jobsque/constants/pages.dart' as pages;
-import '../../reusable_components/authTextField.dart';
-import '../../reusable_components/primaryButton.dart';
+import '../../reusable_components/authentication/AuthTextField.dart';
+import '../../reusable_components/PrimaryButton.dart';
 
 class CreateNewPassword extends StatefulWidget {
   CreateNewPassword({super.key});
@@ -149,7 +149,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                         buttonText: "Reset Password",
                         OnPrimaryButtonPressed: () {
                           Navigator.pushNamed(
-                              context, pages.passwordChangedSuccessScreen);
+                              context, pages.Password_Changed_Success);
                         }),
                   ),
                 ],

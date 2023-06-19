@@ -21,7 +21,7 @@ dependencies:
   font_awesome_flutter: 10.1.0
   from_css_color: 2.0.0
   google_fonts: 3.0.1
-  intl: 0.17.0
+  intl: ^0.18.0
   json_path: 0.4.1
   page_transition: 2.0.4
   provider: 6.0.4
@@ -33,8 +33,17 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_bloc: ^8.1.2
   flutter_staggered_grid_view: ^0.6.2
-
+  country_picker: ^2.0.19
   cupertino_icons: ^1.0.2
+  fl_country_code_picker: ^0.0.4
+  dotted_border: ^2.0.0+3
+  sticky_headers: "^0.3.0"
+  badges: ^3.0.2
+  pinput: ^2.2.8
+  image_picker: ^0.8.6
+  xfile: ^1.1.0
+  percent_indicator: ^4.2.2
+  
 
 dev_dependencies:
   flutter_test:
@@ -54,36 +63,107 @@ dev_dependencies:
 flutter:
   assets: 
     - assets/
-    - assets/icons/navbar_icons/home.svg
-    - assets/icons/navbar_icons/message.svg
-    - assets/icons/navbar_icons/archive-minus.svg
-    - assets/icons/navbar_icons/briefcase.svg
-    - assets/icons/navbar_icons/profile.svg
-    - assets/icons/navbar_icons/homeactive.svg
-    - assets/icons/navbar_icons/messageactive.svg
-    - assets/icons/navbar_icons/archive-minusactive.svg
-    - assets/icons/navbar_icons/briefcaseactive.svg
-    - assets/icons/navbar_icons/profileactive.svg
-    - assets/icons/bezier.svg
-    - assets/icons/TwitterLogo.svg
-    - assets/icons/DiscordLogo.svg
-    - assets/icons/arrow-left.svg
-    - assets/icons/search-normal.svg
-    - assets/icons/profile.svg
-    - assets/icons/clock.svg
-    - assets/icons/arrow-right.svg
-    - assets/icons/close-circle.svg
-    - assets/icons/sms.svg
-    - assets/icons/lock.svg
-    - assets/icons/eye.svg
-    - assets/icons/eye-slash.svg
-    - assets/icons/notification.svg
-    - assets/icons/code.svg
-    - assets/icons/cloud-add.svg
-    - assets/icons/monitor-mobbile.svg
-    - assets/icons/pen-tool-2.svg
-    - assets/icons/graph.svg
-    - assets/arg.png
+    - assets/icons/
+    - assets/data/
+    - assets/data/pic-1.svg
+    - assets/icons/navbar_icons/
+
+    # - assets/flag.svg
+    # - assets/google.svg
+    # - assets/google.png
+    # - assets/Facebook.png
+    # - assets/Facebook.svg
+    # - assets/Logo.png
+    # - assets/rejected-status.svg
+    # - assets/twitter.png
+    # - assets/twitter4.png
+    # - assets/ProfilePic.png
+    # - assets/image31.png
+    # - assets/DanaLogo.png
+    # - assets/DanaLogo.svg
+    # - assets/Ellipse12.svg
+    # - assets/pdf.svg
+    # - assets/SavedIlustration.svg
+    # - assets/DataIlustration.svg
+    # - assets/NotificationIlustration.svg
+    # - assets/data-illust.svg
+    # - assets/edit-2.svg
+    # - assets/document-upload.svg
+    # - assets/export.svg
+    # - assets/icons/DimasProfile.svg
+    # - assets/DimasProfile.png
+    # - assets/job_app_steps/tick-circle.svg
+    # - assets/job_app_steps/step2.svg
+    # - assets/job_app_steps/step3.svg
+    # - assets/job_app_steps/Line.svg
+    # - assets/icons/navbar_icons/home.svg
+    # - assets/icons/navbar_icons/message.svg
+    # - assets/icons/navbar_icons/archive-minus.svg
+    # - assets/icons/navbar_icons/briefcase.svg
+    # - assets/icons/navbar_icons/profile.svg
+    # - assets/icons/navbar_icons/homeactive.svg
+    # - assets/icons/navbar_icons/messageactive.svg
+    # - assets/icons/navbar_icons/archive-minusactive.svg
+    # - assets/icons/navbar_icons/briefcaseactive.svg
+    # - assets/icons/navbar_icons/profileactive.svg
+    # - assets/icons/bezier.svg
+    # - assets/icons/external-drive.svg
+    # - assets/icons/logout.svg
+    # - assets/icons/send.svg
+    # - assets/icons/copy-success.svg
+    # - assets/icons/user-edit.svg
+    # - assets/icons/send-blue.svg
+    # - assets/icons/profile-tick.svg
+    # - assets/icons/import.svg
+    # - assets/icons/note.svg
+    # - assets/icons/global.svg
+    # - assets/icons/folder-favorite.svg
+    # - assets/icons/camera.svg
+    # - assets/icons/calendar.svg
+    # - assets/icons/trash.svg
+    # - assets/icons/microphone-2.svg
+    # - assets/icons/paperclip-2.svg
+    # - assets/icons/more.svg
+    # - assets/icons/TwitterLogo.svg
+    # - assets/icons/DiscordLogo.svg
+    # - assets/icons/arrow-left.svg
+    # - assets/icons/directbox-notif.svg
+    # - assets/icons/arrow-down.svg
+    # - assets/icons/arrow-right-vector.svg
+    # - assets/icons/arrow-right_button.svg
+    # - assets/icons/search-illust.svg
+    # - assets/icons/search-status.svg
+    # - assets/icons/setting-4.svg
+    # - assets/icons/dollar-circle.svg
+    # - assets/icons/location.svg
+    # - assets/icons/briefcase-small.svg
+    # - assets/icons/search-normal.svg
+    # - assets/icons/profile.svg
+    # - assets/icons/clock.svg
+    # - assets/icons/green-clock.svg
+    # - assets/icons/arrow-right.svg
+    # - assets/icons/close-circle.svg
+    # - assets/icons/sms.svg
+    # - assets/icons/lock.svg
+    # - assets/icons/eye.svg
+    # - assets/icons/eye-slash.svg
+    # - assets/icons/notification.svg
+    # - assets/icons/code.svg
+    # - assets/icons/cloud-add.svg
+    # - assets/icons/monitor-mobbile.svg
+    # - assets/icons/pen-tool-2.svg
+    # - assets/icons/graph.svg
+    # - assets/arg.png
+    # - assets/languages/england.png
+    # - assets/languages/indonesia.png
+    # - assets/languages/saudiarabia.png
+    # - assets/languages/china.png
+    # - assets/languages/netherlands.png
+    # - assets/languages/france.png
+    # - assets/languages/germany.png
+    # - assets/languages/japan.png
+    # - assets/languages/southkorea.png
+    # - assets/languages/portugal.png
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
